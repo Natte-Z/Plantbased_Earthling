@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantbased Earthling</title>
+</head>
+<body>
+   (% for recipe in recipe %) 
+        {{ recipe.category_name}}<br>
+        {{ recipe.recipe_name}}<br>
+        {{ recipe.description}}<br>
+        {{ recipe.ingredients}}<br>
+        {{ recipe.serves}}<br>
+        {{ recipe.time}}<br>
+        {{ recipe.instructions}}<br>
+        {{ recipe.difficulty}}<br>
+        {{ recipe.image_url}}<br>
+        {{ recipe.tips}}<br>
+        {{ recipe.vegan}}<br>
+   (% endfor%)
+</body>
+</html>
