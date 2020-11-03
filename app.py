@@ -5,7 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
-
+from bson.json_util import loads, dumps
 
 # ---- CONFIG ----- #
 app = Flask(__name__)
@@ -18,10 +18,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipe")
-def get_recipe():
-    recipe = mongo.db.recipe.find()
-    return render_template("recipe.html", recipe=recipe)
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template("recipes.html", recipes=loads(dumps(recipes)))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
