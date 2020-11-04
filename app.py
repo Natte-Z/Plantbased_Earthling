@@ -3,9 +3,9 @@ from flask import (Flask, flash, render_template, redirect,
 request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-from bson.json_util import loads, dumps
 
 # ---- CONFIG ----- #
 app = Flask(__name__)
@@ -21,10 +21,15 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=loads(dumps(recipes)))
+    return render_template("recipes.html", recipes=recipes)
 
+# ---- Account ----- #
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
         debug=True)
+
