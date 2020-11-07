@@ -1,10 +1,12 @@
 body {
     background-color: #c9af98;
 }
-.text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+.navTextColor {
+    color: #3A4660 !important;
+    background-color: #fafafa;
 }
 
-.nav_color {
-    color: color: #3A4660;
-}
+/* 
+*/
+
