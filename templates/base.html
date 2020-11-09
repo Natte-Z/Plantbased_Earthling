@@ -22,7 +22,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger navTextColor"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_recipes') }}" class="navTextColor">Home</a></li>
-                <li><a href="#" class="navTextColor">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
                 <li><a href="#" class="navTextColor">Recipes</a></li>
                 <li><a href="#" class="navTextColor">Log Out</a></li>
                 <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
@@ -37,7 +37,7 @@
                 <h4 class="center-align blue-grey-text darken-2">Plantbased Earthling</h4>
             </li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-            <li><a href="#" class="navTextColor">Profile</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
             <li><a href="#" class="navTextColor">Recipes</a></li>
             <li><a href="#" class="navTextColor">Log Out</a></li>
             <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
