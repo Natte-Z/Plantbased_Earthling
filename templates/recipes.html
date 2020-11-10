@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Im extended the base template</h2>
+<div class="re">
+
+</div>
+    <h2>All recipes</h2>
     
    {% for recipe in recipes %} 
         {{ recipe.category_name }}<br>
@@ -16,5 +19,23 @@
         {{ recipe.tips }}<br>
         {{ recipe.vegan }}<br>
    {% endfor %}
+
+   <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
+          <span class="card-title">Pasta Pesto</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock%}

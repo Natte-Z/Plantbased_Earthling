@@ -23,7 +23,7 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
-# ---- Account ----- #
+# ---- Account (Register, login, logout) ----- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -95,6 +95,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+# ---- Recipes (categories, add, edit) ----- #
+
+
+# always leave in the end 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
