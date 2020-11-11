@@ -4,9 +4,9 @@
     <h3 class="blue-grey-text darken-2 center-align">Add Recipes</h3>
 <!--all categories 
     {% for recipe in recipes %} 
-        {{ recipe.category_name }}<br>
-        {{ recipe.title }}<br>
-        {{ recipe.description }}<br>
+        {{ recipe.category_name }}<br> X
+        {{ recipe.title }}<br> X
+        {{ recipe.description }}<br> X
         {{ recipe.ingredients }}<br>
         {{ recipe.serves }}<br>
         {{ recipe.time }} <br>
@@ -17,58 +17,109 @@
         {{ recipe.vegan }}<br>
    {% endfor %}.  -->
 
-
-<!--Recipe image-->
-<form method="POST" action="">
-    <div class="file-field input-field">
-      <div class="btn blue-grey-text darken-2 white">
-        <span>Image</span>
-        <input type="file">
-      </div>
-      <div class="file-path-wrapper col-3">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-  </form>
-
-<!--Recipe category -->
-<div class="input-field col s12 blue-grey-text darken-2">
-    <select>
-      <option value="" disabled selected>To which category does your recipe belong?</option>
-      <option value="1">Starter</option>
-      <option value="2">Main Course</option>
-      <option value="3">Dessert</option>
-    </select>
-    <label>Recipe Category</label>
-</div>
-
 <!--Recipe form -->
-  <div class="row">
+  <div class="row recipe_form card-panel">
     <form class="col s12" method="POST" action="">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix blue-grey-text darken-2">spa</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Recipe Name</label>
+<!--Recipe image-->
+        <div class="file-field input-field">
+            <div class="btn-small blue-grey-text darken-2 white">
+                <span>Image</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper col-3">
+                <input class="file-path validate" type="text">
+            </div>
         </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix blue-grey-text darken-2">person</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Account User</label>
+<!--Recipe category -->
+        <div>
+            <h6 class="blue-grey-text darken-2">Recipe Category</h6>
+            <p>
+            <label>
+                <input name="group1" type="radio" checked />
+                <span>Starter</span>
+            </label>
+            </p>
+            <p>
+            <label>
+                <input name="group1" type="radio" />
+                <span>Main Course</span>
+            </label>
+            </p>
+            <p>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  />
+                <span>Dessert</span>
+            </label>
+            </p>
         </div>
-      </div>
+<!--Recipe_name-->
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix blue-grey-text darken-2">spa</i>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                type="text" class="validate" required>
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+<!--Serves, time, difficulty -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="input-field col s4">
+                    <input id="time" name="time" type="time" class="validate">
+                    <label class="blue-grey-text darken-2" for="time">Cooking time</label>
+                </div>
+                <div class="input-field col s4 validate" id="serves" name="serves">
+                    <select>
+                    <option value="" disabled selected>Serve Portion</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    </select>
+                    <label class="blue-grey-text darken-2" for="serves">Serves</label>
+                </div>
+                <div class="input-field col s4 blue-grey-text darken-2" id="difficulty" name="difficulty">
+                    <select>
+                    <option value="" disabled selected>Difficulty</option>
+                    <option value="1">Easy</option>
+                    <option value="2">Intermediate</option>
+                    <option value="3">Pro</option>
+                    </select>
+                    <label class="blue-grey-text darken-2" for="difficulty">Difficulty</label>
+                </div>
+            </div>
+        </div>
+<!--Recipe_name-->
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix blue-grey-text darken-2">person</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Account User</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix blue-grey-text darken-2">list</i>
+                <textarea id="recipe_description" name="recipe_description" minlength="5"
+                maxlength="200" class="materialize-textarea validate" required></textarea>
+                <label for="recipe_description">Recipe Description</label>
+            </div>
+        </div>
+<!--Switch Vegan -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="material-icons prefix blue-grey-text darken-2">filter_vintage</i>
+                    <label class="blue-grey-text darken-2" for="vegan">
+                    <input type="checkbox" id="vegan" name="vegan">
+                    <span class="lever"></span>
+                    Vegan
+                    </label>
+                </div>
+            </div>
+        </div>
     </form>
   </div>
 
-<!--Checkbox Vegan -->
-
-<form action="" class="blue-grey-text darken-2">
-    <p class="blue-grey-text darken-2">
-        <label class="blue-grey-text darken-2">
-            <input type="checkbox" class="blue-grey-text darken-2"/>
-            <span class="blue-grey-text darken-2">Vegan</span>
-        </label>
-    </p>
-</form>
 
  {% endblock %}

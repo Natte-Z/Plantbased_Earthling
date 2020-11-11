@@ -1,5 +1,5 @@
 body {
-    background-color: #c9af98;
+    background-color: #fafafa;
 }
 
 .navTextColor {
@@ -11,6 +11,9 @@ body {
     line-height: 2;
 }
 
+.recipe_form {
+    background-color: #c9af98;
+}
 /* 
 */
 
