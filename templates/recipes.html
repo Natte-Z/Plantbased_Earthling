@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="re">
+<div class="re"></div>
 
-</div>
     <h2>All recipes</h2>
     
-   {% for recipe in recipes %} 
+    {% for recipe in recipes %} 
         {{ recipe.category_name }}<br>
-        {{ recipe.recipe_name }}<br>
+        {{ recipe.title }}<br>
         {{ recipe.description }}<br>
         {{ recipe.ingredients }}<br>
         {{ recipe.serves }}<br>
@@ -18,24 +17,45 @@
         {{ recipe.image_url }}<br>
         {{ recipe.tips }}<br>
         {{ recipe.vegan }}<br>
-   {% endfor %}
+   {% endfor %}. 
 
-   <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
-          <span class="card-title">Pasta Pesto</span>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
+<!--Recipe image-->
+<form action="#">
+    <div class="file-field input-field">
+      <div class="btn blue-grey-text darken-2 white">
+        <span>Image</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper col-3">
+        <input class="file-path validate" type="text">
       </div>
     </div>
-  </div>
+  </form>
+
+
+
+<!--  Recipe Card  -->
+   
+    <ul class="collapsible">
+    {% for recipe in recipes %} 
+    <li>
+      <div class="collapsible-header blue-grey-text darken-2 white">
+        <i class="material-icons">create_new_folder</i>
+        <strong>{{ recipe.category_name }}</strong>
+        {% if recipe.vegan == "on" %}
+        <i class="material-icons blue-grey-text darken-2 white tooltipped"
+        data-tooltip="Vegan">filter_vintage</i>
+        {% endif %}
+      </div>
+      <div class="collapsible-body">
+        <strong>{{ recipe.title }}</strong>
+        <p>{{ recipe.description }}</p>
+      </div>
+      <div class="collapsible-body">
+        <strong></strong>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 
 {% endblock%}

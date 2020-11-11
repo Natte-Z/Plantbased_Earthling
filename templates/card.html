@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--  Recipe Card  -->
+   <div class="row">
+   {% if recipe.count() > 0 %}
+   {% for recipe in recipes %} 
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
+          <span class="card-title">{{ recipe.recipe_name }}</span>
+        </div>
+        <div class="card-content">
+          <p>{{ recipe.description }}</p>
+        </div>
+        <div class="row">
+            <div class="card-action col-3">
+                <i class="material-icons">access_time</i>
+                <span class="">{{ recipe.time }}</span>
+            </div>
+            <div class="card-action col-3">
+                <i class="material-icons">dashboard</i>
+                <span class="">{{ recipe.category_name }}</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="row">No recipes available!</p>
+  {% endif %}
+
+{% endblock%}
