@@ -31,26 +31,14 @@
             </div>
         </div>
 <!--Recipe category -->
-        <div>
-            <h6 class="blue-grey-text darken-2">Recipe Category</h6>
-            <p>
-            <label>
-                <input name="group1" type="radio" checked />
-                <span>Starter</span>
-            </label>
-            </p>
-            <p>
-            <label>
-                <input name="group1" type="radio" />
-                <span>Main Course</span>
-            </label>
-            </p>
-            <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>Dessert</span>
-            </label>
-            </p>
+        <div class="input-field col s12">
+            <i class="material-icons prefix blue-grey-text darken-2">spa</i>
+            <select name="category_name" id="category_name" class="validate" required>
+                <option value="" diasabled selected  >Choose Category</option> 
+                {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% endfor %}
+            </select>
         </div>
 <!--Recipe_name-->
         <div class="row">
@@ -68,7 +56,7 @@
                     <input id="time" name="time" type="time" class="validate">
                     <label class="blue-grey-text darken-2" for="time">Cooking time</label>
                 </div>
-                <div class="input-field col s4 validate" id="serves" name="serves">
+                <div class="input-field col s4 validate" id="serves" name="serves" required>
                     <select>
                     <option value="" disabled selected>Serve Portion</option>
                     <option value="1">1</option>
@@ -78,7 +66,7 @@
                     </select>
                     <label class="blue-grey-text darken-2" for="serves">Serves</label>
                 </div>
-                <div class="input-field col s4 blue-grey-text darken-2" id="difficulty" name="difficulty">
+                <div class="input-field col s4 blue-grey-text darken-2 validate" id="difficulty" name="difficulty" required>
                     <select>
                     <option value="" disabled selected>Difficulty</option>
                     <option value="1">Easy</option>
