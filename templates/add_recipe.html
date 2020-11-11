@@ -1,0 +1,74 @@
+ {% extends "base.html" %}
+ {% block content %}
+
+    <h3 class="blue-grey-text darken-2 center-align">Add Recipes</h3>
+<!--all categories 
+    {% for recipe in recipes %} 
+        {{ recipe.category_name }}<br>
+        {{ recipe.title }}<br>
+        {{ recipe.description }}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.serves }}<br>
+        {{ recipe.time }} <br>
+        {{ recipe.instructions }}<br>
+        {{ recipe.difficulty }}<br>
+        {{ recipe.image_url }}<br>
+        {{ recipe.tips }}<br>
+        {{ recipe.vegan }}<br>
+   {% endfor %}.  -->
+
+
+<!--Recipe image-->
+<form method="POST" action="">
+    <div class="file-field input-field">
+      <div class="btn blue-grey-text darken-2 white">
+        <span>Image</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper col-3">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </form>
+
+<!--Recipe category -->
+<div class="input-field col s12 blue-grey-text darken-2">
+    <select>
+      <option value="" disabled selected>To which category does your recipe belong?</option>
+      <option value="1">Starter</option>
+      <option value="2">Main Course</option>
+      <option value="3">Dessert</option>
+    </select>
+    <label>Recipe Category</label>
+</div>
+
+<!--Recipe form -->
+  <div class="row">
+    <form class="col s12" method="POST" action="">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix blue-grey-text darken-2">spa</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Recipe Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix blue-grey-text darken-2">person</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Account User</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<!--Checkbox Vegan -->
+
+<form action="" class="blue-grey-text darken-2">
+    <p class="blue-grey-text darken-2">
+        <label class="blue-grey-text darken-2">
+            <input type="checkbox" class="blue-grey-text darken-2"/>
+            <span class="blue-grey-text darken-2">Vegan</span>
+        </label>
+    </p>
+</form>
+
+ {% endblock %}

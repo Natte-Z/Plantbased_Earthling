@@ -2,39 +2,9 @@
 {% block content %}
 
 <div class="re"></div>
+<h4 class="blue-grey-text darken-2">Recipes</h4>
 
-    <h2>All recipes</h2>
-    
-    {% for recipe in recipes %} 
-        {{ recipe.category_name }}<br>
-        {{ recipe.title }}<br>
-        {{ recipe.description }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.time }} <br>
-        {{ recipe.instructions }}<br>
-        {{ recipe.difficulty }}<br>
-        {{ recipe.image_url }}<br>
-        {{ recipe.tips }}<br>
-        {{ recipe.vegan }}<br>
-   {% endfor %}. 
-
-<!--Recipe image-->
-<form action="#">
-    <div class="file-field input-field">
-      <div class="btn blue-grey-text darken-2 white">
-        <span>Image</span>
-        <input type="file">
-      </div>
-      <div class="file-path-wrapper col-3">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-  </form>
-
-
-
-<!--  Recipe Card  -->
+<!--  Recipe accordiong  
    
     <ul class="collapsible">
     {% for recipe in recipes %} 
@@ -56,6 +26,35 @@
       </div>
     </li>
     {% endfor %}
-  </ul>
+  </ul> -->
+
+
+<!--  Recipe Card  -->
+
+  <div class="row">
+   {% for recipe in recipes %} 
+    <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
+                <span class="card-title">{{ recipe.title }}</span>
+            </div>
+            <div class="card-content">
+                <p>{{ recipe.description }}</p>
+            </div>
+            <div class="card-action col-6">
+                <i class="material-icons left">access_time</i>
+                <span class="left">{{ recipe.time }}</span>
+                <i class="material-icons right">dashboard</i>
+                <span class="right">{{ recipe.category_name }}</span>
+                {% if recipe.vegan == "on" %}
+                    <i class="material-icons blue-grey-text darken-2 white tooltipped"
+                    data-tooltip="Vegan">filter_vintage</i>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
 
 {% endblock%}

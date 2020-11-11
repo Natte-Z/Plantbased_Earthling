@@ -25,7 +25,7 @@
                 <li><a href="#" class="navTextColor">Contact</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
-                    <li><a href="{{ url_for('get_recipes') }}" class="navTextColor">Recipes</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}" class="navTextColor">Add Recipe</a></li>
                     <li><a href="{{ url_for('logout') }}" class="navTextColor">Log Out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
@@ -43,7 +43,7 @@
             <li><a href="#" class="navTextColor">Contact</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
-                <li><a href="{{ url_for('get_recipes') }}" class="navTextColor">Recipes</a></li>
+                <li><a href="{{ url_for('add_recipe') }}" class="navTextColor">Add Recipe</a></li>
                 <li><a href="{{ url_for('logout') }}" class="navTextColor">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
