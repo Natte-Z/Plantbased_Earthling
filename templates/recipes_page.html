@@ -75,9 +75,10 @@
 </div>
 
 <!-- recipe_edit --> <!-- recipe_delete -->
+<!--maybe problems because not in  {% for recipe in recipes %} same file-->
 <div class="row">
     <div class="col-6">
-        <a href="" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+        <a href="{{ url_for('edit_recipe', recipe_id=) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
             <i class="material-icons left">edit</i>
             Edit
         </a>
