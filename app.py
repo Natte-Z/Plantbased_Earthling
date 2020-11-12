@@ -96,7 +96,14 @@ def logout():
     return redirect(url_for("login"))
 
 # ---- Recipes (categories, add, edit) ----- #
+# ---- recipe_page ----- #
 
+@app.route("/recipe_page")
+def recipe_page():
+    return redirect(url_for("recipe_page"))
+
+
+# ---- add_recipe ----- #
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -123,6 +130,10 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+# ---- edit_recipe ----- #
+
+# ---- delete_recipe ----- #
 
 
 # always leave in the end 

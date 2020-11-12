@@ -36,8 +36,9 @@
     <div class="col s6 m7">
         <div class="card">
             <div class="card-image">
-              <!--  Recipe Card   <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">--> 
-                <img src="{{ ('recipe.image_url') }}">
+                <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
+                <!--  Recipe image  
+                <img src="{{ ('recipe.image_url') }}"> --> 
                 <span class="card-title">{{ recipe.recipe_name }}</span>
             </div>
             <div class="card-content">

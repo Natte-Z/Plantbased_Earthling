@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- recipe_headline -->
+<div class="recipe_headline">
+    <h2>{{recipe.title}}</h2>
+    <div class="row col sd6">
+        <p>Created by: {{recipe.username}}</p>
+    </div>
+</div>
+
+<!-- recipe_image_url CLOUDINARY-->
+
+<!-- recipe_info -->
+<div class="recipe_description">
+    <h5>{{recipe.recipe_description}}</h5>
+</div>
+
+<div class="recipe_basic">
+    <div class="row card-panel">
+        <div class="col-3">
+            <h6>Cooking time:</h6>
+            <p>{{recipe.recipe_time}}</p>
+        </div>
+        <div class="col-3">
+            <h6>Serves:</h6>
+            <p>{{recipe.recipe_serves}}</p>
+        </div>
+        <div class="col-3">
+            <h6>Difficulty</h6>
+            <p>{{recipe.recipe_difficulty}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- recipe_ingredients -->
+<div class="recipe_ingredients">
+    <h5>Recipe Ingredients</h5>
+    <ul>
+        {% for line in recipe.recipe_ingredients.splitlines() %}
+        <li class="recipe_ingredients_list">
+            <p>{{line}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- recipe_instructions -->
+<div class="row recipe_instructions">
+    <div class="col-12">
+        <h5>Recipe Instructions</h5>
+        <ul>
+            {% for line in recipe.recipe_instructions.splitlines() %}
+            <li class="recipe_instructions_list">
+                <p>{{line}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- recipe_tips -->
+
+{% if recipe.recipe_tips %}
+<div class="row recipe_tips">
+    <div class="col-12">
+        <h5>Recipe Tips</h5>
+        {% for tip in recipe.tips.splitline() %}
+        <p>{{tip}}</p>
+        {% else %}
+        <p>No tips!</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<!-- recipe_edit --> <!-- recipe_delete -->
+<div class="row">
+    <div class="col-6">
+        <a href="" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+            <i class="material-icons left">edit</i>
+            Edit
+        </a>
+    </div>
+    <div class="col-6">
+        <a href="" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+            <i class="material-icons left">delete</i>
+            Delete
+        </a>
+    </div>
+</div>
+
+
+{% endblock %}

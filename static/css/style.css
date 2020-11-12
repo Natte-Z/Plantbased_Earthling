@@ -18,6 +18,10 @@ body {
     background-color: #c9af98;
 }
 
+.btn-small{
+    margin: 5px;
+}
+
 .footer {
     height: 50px;
     background-color: #3A4660;
