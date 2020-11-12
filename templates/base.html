@@ -46,7 +46,7 @@
                 <li><a href="{{ url_for('add_recipe') }}" class="navTextColor">Add Recipe</a></li>
                 <li><a href="{{ url_for('logout') }}" class="navTextColor">Log Out</a></li>
             {% else %}
-                <li><a href="{{ ul_for('login') }}" class="navTextColor">Log In</a></li>
+                <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
                 <li><a href="{{ url_for('register') }}" class="navTextColor">Register</a></li>
             {% endif %}
         </ul>

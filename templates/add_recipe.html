@@ -19,20 +19,20 @@
 
 <!--Recipe form -->
   <div class="row recipe_form card-panel">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
 <!--Recipe image-->
         <div class="file-field input-field">
-            <div class="btn-small blue-grey-text darken-2 white">
+            <div class="btn-small blue-grey-text darken-2 white" id="image_url" name="image_url" >
                 <span>Image</span>
                 <input type="file">
             </div>
             <div class="file-path-wrapper col-3">
-                <input class="file-path validate" type="text">
+                <input id="image_url" name="image_url" class="file-path validate" type="text">
             </div>
         </div>
 <!--Recipe category -->
         <div class="input-field col s12">
-            <i class="material-icons prefix blue-grey-text darken-2">arrow_downward</i>
+            <i class="material-icons prefix">arrow_downward</i>
             <select name="category_name" id="category_name" class="validate" required>
                 <option value="" diasabled selected  >Choose Category</option> 
                 {% for category in categories %}
@@ -48,42 +48,40 @@
                 type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
+<!--serves-->
+            <div class="col s6">
+                <label class="blue-grey-text darken-2" for="recipe_serves">Serves</label>
+                <p class="range-field">
+                    <input class="col s6 validate" type="range" id="recipe_serves" name="recipe_serves" required min="0" max="30" />
+                </p>
+            </div>
         </div>
-<!--Serves, time, difficulty -->
+<!--time, difficulty -->
         <div class="row">
-            <div class="input-field col s12">
-                <div class="input-field col s4">
-                    <input id="time" name="time" type="time" class="validate">
-                    <label class="blue-grey-text darken-2" for="time">Cooking time</label>
+            <div class="input-field col s12 blue-grey-text darken-2">
+                <div class="input-field col s6">
+                    <input id="recipe_time" name="recipe_time" type="time" class="validate">
+                    <label class="blue-grey-text darken-2" for="recipe_time">Cooking time</label>
                 </div>
-                <div class="input-field col s4 validate" id="serves" name="serves" required>
-                    <select>
-                    <option value="" disabled selected>Serves</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    </select>
-                    <label class="blue-grey-text darken-2" for="serves">Serves</label>
-                </div>
-                <div class="input-field col s4 blue-grey-text darken-2 validate" id="difficulty" name="difficulty" required>
-                    <select>
+                <div class="input-field col s6 blue-grey-text darken-2 validate" id="recipe_difficulty" name="recipe_difficulty" required>
+                    <select class="blue-grey-text darken-2">
                     <option value="" disabled selected>Difficulty</option>
                     <option value="1">Easy</option>
                     <option value="2">Intermediate</option>
                     <option value="3">Pro</option>
                     </select>
-                    <label class="blue-grey-text darken-2" for="difficulty">Difficulty</label>
+                    <label class="blue-grey-text darken-2" for="recipe_difficulty">Difficulty</label>
                 </div>
             </div>
         </div>
+
 <!--description-->
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix blue-grey-text darken-2">list</i>
                 <textarea id="recipe_description" name="recipe_description" minlength="5"
-                maxlength="50" class="materialize-textarea validate" required></textarea>
-                <label for="recipe_description">Recipe Description</label>
+                maxlength="30" class="materialize-textarea validate" required></textarea>
+                <label for="recipe_description">Short recipe description</label>
             </div>
         </div>
 <!--ingredients-->
@@ -113,7 +111,6 @@
                 <label for="recipe_tips">Tips</label>
             </div>
         </div>
-
 <!--Switch Vegan -->
         <div class="row">
             <div class="input-field col s12">
@@ -125,6 +122,14 @@
                     Vegan
                     </label>
                 </div>
+            </div>
+        </div>
+<!--Submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large blue-grey-text darken-2 white">
+                    Add recipe
+                </button>
             </div>
         </div>
     </form>

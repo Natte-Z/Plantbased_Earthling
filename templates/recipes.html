@@ -33,10 +33,11 @@
 
   <div class="row">
    {% for recipe in recipes %} 
-    <div class="col s12 m7">
+    <div class="col s6 m7">
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">
+              <!--  Recipe Card   <img src="{{ url_for('static', filename='images/pesto.jpeg') }}">--> 
+                <img src="{{ ('recipe.image_url') }}">
                 <span class="card-title">{{ recipe.recipe_name }}</span>
             </div>
             <div class="card-content">
@@ -47,8 +48,9 @@
                 <span class="left">{{ recipe.time }}</span>
                 <i class="material-icons right">dashboard</i>
                 <span class="right">{{ recipe.category_name }}</span>
+                <span><em>by: {{ recipe.created_by }}</span>
                 {% if recipe.vegan == "on" %}
-                    <i class="material-icons blue-grey-text darken-2 white tooltipped"
+                    <i class="material-icons blue-grey-text darken-2 white tooltipped center-align"
                     data-tooltip="Vegan">filter_vintage</i>
                 {% endif %}
             </div>
