@@ -8,25 +8,26 @@
 
 <div class="row">
    {% for recipe in recipes %} 
-    <div class="col s6 m7">
+    <div class="col s12 m6 l4">
         <div class="card">
             <div class="card-image">
              <!--  Recipe image -->
-                <img src="{{ recipe.image_url }}"> 
-                
+                <img src="{{ recipe.image_url }}" height="300px" class="responsive-img" > 
                 <div class="col s6 m7">
                 <span class="card-title">{{ recipe.recipe_name }}</span>
                 <a href="{{ url_for('recipes_page', recipe_id=recipe._id) }}" 
-                class="waves-effect waves-light btn-small blue-grey-text darken-2 white center-align">
+                class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
                     View recipe
                 </a>
                 </div>
                 
             </div>
             <div class="card-content">
-                <p>{{ recipe.recipe_description }}</p>
+                
+                <p class="col4">{{ recipe.recipe_description }}</p>
+
             </div>
-            <div class="card-action col-6">
+            <div class="card-action col12">
                 <i class="material-icons blue-grey-text darken-2">access_time</i>
                 <span class="">{{ recipe.recipe_time }}</span>
                 <i class="material-icons right blue-grey-text darken-2">dashboard</i>

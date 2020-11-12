@@ -1,6 +1,3 @@
-/* 
-*/
-
 body {
     background-color: #fafafa;
     display: flex;
@@ -10,9 +7,10 @@ body {
 main {
     flex: 1 0 auto;
   }
+/* Navbar */
 
 .navTextColor {
-    color: #3A4660 !important;
+    color: #3A4660;
     background-color: #fafafa;
 }
 
@@ -20,13 +18,23 @@ main {
     line-height: 2;
 }
 
+
+/* Recipe_html */
+.btn-small{
+    margin: 5px;
+}
+.responsive{
+    
+}
+
+/* add_recipe */
+
 .recipe_form {
     background-color: #c9af98;
 }
 
-.btn-small{
-    margin: 5px;
-}
+
+/* footer */
 
 .footer {
     height: 50px;
