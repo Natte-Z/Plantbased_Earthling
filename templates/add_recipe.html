@@ -21,24 +21,21 @@
   <div class="row recipe_form card-panel">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
 <!--Recipe image-->
-        <div class="file-field input-field">
-            <div class="btn-small blue-grey-text darken-2 white" id="image_url" name="image_url" >
-                <span>Image</span>
-                <input type="file">
-            </div>
-            <div class="file-path-wrapper col-3">
-                <input id="image_url" name="image_url" class="file-path validate" type="text">
-            </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix blue-grey-text darken-2">crop_free</i>
+          <input id="image_url" name="image_url" type="text" class="validate">
+          <label class="blue-grey-text darken-2" for="image_url">Please insert an URL for your recipe image</label>
         </div>
 <!--Recipe category -->
-        <div class="input-field col s12">
-            <i class="material-icons prefix">arrow_downward</i>
+        <div class="input-field col s6">
+            <i class="material-icons prefix blue-grey-text darken-2">arrow_downward</i>
             <select name="category_name" id="category_name" class="validate" required>
-                <option value="" diasabled selected  >Choose Category</option> 
+                <option value="" diasabled selected></option>
                 {% for category in categories %}
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                 {% endfor %}
             </select>
+            <label class="blue-grey-text darken-2" for="category_name">Category</label> 
         </div>
 <!--Recipe_name-->
         <div class="row">
@@ -46,26 +43,29 @@
                 <i class="material-icons prefix blue-grey-text darken-2">spa</i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                 type="text" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+                <label class="blue-grey-text darken-2" for="recipe_name">Recipe Name</label>
             </div>
 <!--serves-->
             <div class="col s6">
                 <label class="blue-grey-text darken-2" for="recipe_serves">Serves</label>
                 <p class="range-field">
+                    <i class="material-icons prefix blue-grey-text darken-2 left">view_module</i>
                     <input class="col s6 validate" type="range" id="recipe_serves" name="recipe_serves" required min="0" max="30" />
                 </p>
             </div>
         </div>
 <!--time, difficulty -->
         <div class="row">
-            <div class="input-field col s12 blue-grey-text darken-2">
+            <div class="input-field col s12">
                 <div class="input-field col s6">
+                    <i class="material-icons prefix blue-grey-text darken-2">timer</i>
                     <input id="recipe_time" name="recipe_time" type="text" class="validate">
-                    <label class="blue-grey-text darken-2" for="recipe_time">Cooking time</label>
+                    <label class="blue-grey-text darken-2" for="recipe_time">How long does your recipe take? (e.g.</label>
                 </div>
                 <div class="input-field col s6 blue-grey-text darken-2 validate" id="recipe_difficulty" name="recipe_difficulty" required>
-                    <select class="blue-grey-text darken-2">
-                    <option value="" disabled selected>Difficulty</option>
+                    <i class="material-icons prefix blue-grey-text darken-2">traffic</i>
+                    <select>
+                    <option value="" disabled selected></option>
                     <option value="1">Easy</option>
                     <option value="2">Intermediate</option>
                     <option value="3">Pro</option>
@@ -77,38 +77,38 @@
 
 <!--description-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2">list</i>
                 <textarea id="recipe_description" name="recipe_description" minlength="5"
                 maxlength="30" class="materialize-textarea validate" required></textarea>
-                <label for="recipe_description">Short recipe description</label>
+                <label class="blue-grey-text darken-2" for="recipe_description">Short recipe description</label>
             </div>
         </div>
 <!--ingredients-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2">local_offer</i>
                 <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="5"
                 maxlength="200" class="validate" required>
-                <label for="recipe_ingredients">Ingredients</label>
+                <label class="blue-grey-text darken-2" for="recipe_ingredients">Ingredients</label>
             </div>
         </div>
 <!--instructions-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2">announcement</i>
                 <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="5"
                 maxlength="200" class="validate" required>
-                <label for="recipe_instructions">Instructions</label>
+                <label class="blue-grey-text darken-2" for="recipe_instructions">Instructions</label>
             </div>
         </div>
 <!--tips-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2">lightbulb_outline</i>
                 <input id="recipe_tips" name="recipe_tips" type="text" minlength="5"
                 maxlength="200" class="validate" required>
-                <label for="recipe_tips">Tips</label>
+                <label class="blue-grey-text darken-2" for="recipe_tips">Tips</label>
             </div>
         </div>
 <!--Switch Vegan -->

@@ -98,9 +98,9 @@ def logout():
 
 # ---- recipe_page ----- #
 
-@app.route("/recipe_page")
-def recipe_page():
-    return redirect(url_for("recipe_page"))
+# @app.route("/recipe_page")
+# def recipe_page():
+#    return redirect(url_for("recipe_page")) 
 
 # ---- Recipes (categories, add, edit) ----- #
 # ---- add_recipe ----- #
