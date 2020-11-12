@@ -98,9 +98,11 @@ def logout():
 
 # ---- recipe_page ----- #
 
-# @app.route("/recipe_page")
-# def recipe_page():
-#    return redirect(url_for("recipe_page")) 
+@app.route("/recipes_page/<recipe_id>")
+def recipes_page(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    return render_template("recipes_page.html", recipe=recipe)
 
 # ---- Recipes (categories, add, edit) ----- #
 # ---- add_recipe ----- #
@@ -118,12 +120,11 @@ def add_recipe():
             "recipe_time": request.form.get("recipe_time"),
             "recipe_difficulty": request.form.get("recipe_difficulty"),
             "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
-            "recipe_instructions": request.form.getlist("recipe_instructions"),
-            "recipe_tips": request.form.get("recipe_tips"),
+            "recipe_ingredients": request.form.get("recipe_ingredients").split(";"),
+            "recipe_instructions": request.form.get("recipe_instructions").split(";"),
+            "recipe_tips": request.form.get("recipe_tips").split(";"),
             "vegan": vegan,
             "created_by": session["user"]
-
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added to the website")
@@ -136,7 +137,7 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId()})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId()})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)

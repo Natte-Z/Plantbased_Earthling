@@ -2,72 +2,40 @@
 {% block content %}
 
 <div class="re"></div>
-<h4 class="blue-grey-text darken-2">Recipes</h4>
-
-<!--  Recipe accordiong  
-   
-    <ul class="collapsible">
-    {% for recipe in recipes %} 
-    <li>
-      <div class="collapsible-header blue-grey-text darken-2 white">
-        <i class="material-icons">create_new_folder</i>
-        <strong>{{ recipe.category_name }}</strong>
-        {% if recipe.vegan == "on" %}
-        <i class="material-icons blue-grey-text darken-2 white tooltipped"
-        data-tooltip="Vegan">filter_vintage</i>
-        {% endif %}
-      </div>
-      <div class="collapsible-body">
-        <strong>{{ recipe.title }}</strong>
-        <p>{{ recipe.description }}</p>
-      </div>
-      <div class="collapsible-body">
-        <strong></strong>
-      </div>
-    </li>
-    {% endfor %}
-  </ul> -->
-
+<h4 class="blue-grey-text darken-2">All Recipes</h4>
 
 <!--  Recipe Card  -->
 
-  <div class="row">
+<div class="row">
    {% for recipe in recipes %} 
     <div class="col s6 m7">
         <div class="card">
             <div class="card-image">
-             <!--  Recipe image 
-                <img src="{{ url_for('static', filename='images/pesto.jpeg') }}"-->
+             <!--  Recipe image -->
                 <img src="{{ recipe.image_url }}"> 
+                
+                <div class="col s6 m7">
                 <span class="card-title">{{ recipe.recipe_name }}</span>
+                <a href="{{ url_for('recipes_page', recipe_id=recipe._id) }}" 
+                class="waves-effect waves-light btn-small blue-grey-text darken-2 white center-align">
+                    View recipe
+                </a>
+                </div>
+                
             </div>
             <div class="card-content">
-                <p>{{ recipe.description }}</p>
+                <p>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action col-6">
-                <i class="material-icons left">access_time</i>
-                <span class="left">{{ recipe.time }}</span>
-                <i class="material-icons right">dashboard</i>
+                <i class="material-icons blue-grey-text darken-2">access_time</i>
+                <span class="">{{ recipe.recipe_time }}</span>
+                <i class="material-icons right blue-grey-text darken-2">dashboard</i>
                 <span class="right">{{ recipe.category_name }}</span>
-                <span><em>by: {{ recipe.created_by }}</span>
+                <span class="left">{{ recipe.created_by }}</span>
                 {% if recipe.vegan == "on" %}
-                    <i class="material-icons blue-grey-text darken-2 white tooltipped center-align"
+                    <i class="material-icons blue-grey-text darken-2 white tooltipped left"
                     data-tooltip="Vegan">filter_vintage</i>
                 {% endif %}
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe_id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
-                        <i class="material-icons left">edit</i>
-                        Edit
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
-                        <i class="material-icons left">delete</i>
-                        Delete
-                    </a>
-                </div>
             </div>
         </div>
     </div>
