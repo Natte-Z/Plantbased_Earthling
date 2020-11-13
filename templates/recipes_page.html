@@ -12,7 +12,9 @@
         </div>
     </div>
     <!-- recipe_image_url -->
-    <img class="recipe_image" src="{{recipe.image_url}}" alt="recipe_image">
+    <div class="recipe_image_wrapper">
+        <img class="recipe_image" src="{{recipe.image_url}}" alt="recipe_image">
+    </div>
     <!-- recipe_info -->
     <div class="recipe_description">
         <h5>{{recipe.recipe_description}}</h5>
@@ -70,7 +72,8 @@
     <!-- recipe_edit --> <!-- recipe_delete -->
     <div class="row">
         <div class="col-6">
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe_id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
+            class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
                 <i class="material-icons left">edit</i>
                 Edit
             </a>

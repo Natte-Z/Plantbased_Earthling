@@ -7,14 +7,10 @@
   <div class="row recipe_form card-panel">
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
 <!--Recipe image-->
-        <div class="file-field input-field">
-            <div class="btn-small blue-grey-text darken-2 white" id="image_url" name="image_url" >
-                <span>Image</span>
-                <input type="file">
-            </div>
-            <div class="file-path-wrapper col-3">
-                <input id="image_url" name="image_url" class="file-path validate" type="text">
-            </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix blue-grey-text darken-2">crop_free</i>
+          <input id="image_url" name="image_url" type="text" class="validate">
+          <label class="blue-grey-text darken-2" for="image_url">Insert a URL for the image</label>
         </div>
 <!--Recipe category -->
         <div class="input-field col s12">
