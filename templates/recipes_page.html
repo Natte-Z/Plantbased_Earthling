@@ -80,7 +80,7 @@
                 </a>
             </div>
             <div class="col-6">
-                <a href="" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
                     <i class="material-icons left">delete</i>
                     Delete
                 </a>
