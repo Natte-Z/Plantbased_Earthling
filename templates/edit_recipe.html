@@ -1,7 +1,7 @@
  {% extends "base.html" %}
  {% block content %}
 
-    <h3 class="blue-grey-text darken-2 center-align">Edit Recipes</h3>
+    <h3 class="blue-grey-text darken-2 center-align fontHeader">Edit Recipes</h3>
 
 <!--Recipe form -->
   <div class="row recipe_form card-panel">
@@ -10,7 +10,7 @@
         <div class="input-field col s6">
           <i class="material-icons prefix blue-grey-text darken-2">crop_free</i>
           <input id="image_url" name="image_url" type="text" class="validate" value="{{ recipe.image_url }}">
-          <label class="blue-grey-text darken-2" for="image_url">Insert a URL for the image</label>
+          <label class="blue-grey-text darken-2 fontText" for="image_url">Insert a URL for the image</label>
         </div>
 <!--Recipe category -->
         <div class="input-field col s12">
@@ -19,9 +19,9 @@
                 <option value="" diasabled>Choose Category</option> 
                 {% for category in categories %}
                     {% if category.category_name == recipe.category_name %}
-                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        <option class="fontText" value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                     {% else %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        <option class="fontText" value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endif %}
                 {% endfor %}
             </select>
@@ -32,11 +32,11 @@
                 <i class="material-icons prefix blue-grey-text darken-2">spa</i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                 value="{{ recipe.recipe_name }}" type="text" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+                <label for="recipe_name fontText">Recipe Name</label>
             </div>
 <!--serves-->
             <div class="col s6">
-                <label class="blue-grey-text darken-2" for="recipe_serves">Serves</label>
+                <label class="blue-grey-text darken-2 fontText" for="recipe_serves">Serves</label>
                 <p class="range-field">
                     <input class="col s6 validate" type="range" id="recipe_serves" name="recipe_serves" required min="0" max="30" value="{{ recipe.recipe_serves }}"/>
                 </p>
@@ -47,7 +47,7 @@
             <div class="input-field col s12 blue-grey-text darken-2">
                 <div class="input-field col s6">
                     <input id="recipe_time" name="recipe_time" type="text" class="validate" value="{{ recipe.recipe_time }}">
-                    <label class="blue-grey-text darken-2" for="recipe_time">Cooking time</label>
+                    <label class="blue-grey-text darken-2 fontText" for="recipe_time">Cooking time</label>
                 </div>
                 <div class="input-field col s6 blue-grey-text darken-2 validate" id="recipe_difficulty" name="recipe_difficulty" required>
                     <select class="blue-grey-text darken-2">
@@ -56,7 +56,7 @@
                     <option value="2">Intermediate</option>
                     <option value="3">Pro</option>
                     </select>
-                    <label class="blue-grey-text darken-2" for="recipe_difficulty">Difficulty</label>
+                    <label class="blue-grey-text darken-2 fontText" for="recipe_difficulty">Difficulty</label>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 maxlength="30" class="materialize-textarea validate" required>
                     {{- recipe.recipe_description -}}
                 </textarea>
-                <label for="recipe_description">Short recipe description</label>
+                <label for="recipe_description fontText">Short recipe description</label>
             </div>
         </div>
 <!--ingredients-->
@@ -78,7 +78,7 @@
                 <i class="material-icons prefix blue-grey-text darken-2">local_offer</i>
                 <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="5"
                 maxlength="200" class="validate" value="{{ recipe.recipe_ingredients }}" required>
-                <label for="recipe_ingredients">Ingredients</label>
+                <label for="recipe_ingredients fontText">Ingredients</label>
             </div>
         </div>
 <!--instructions-->
@@ -87,7 +87,7 @@
                 <i class="material-icons prefix blue-grey-text darken-2">announcement</i>
                 <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="5"
                 maxlength="200" class="validate" value="{{ recipe.recipe_instructions }}" required>
-                <label for="recipe_instructions">Instructions</label>
+                <label for="recipe_instructions fontText">Instructions</label>
             </div>
         </div>
 <!--tips-->
@@ -96,7 +96,7 @@
                 <i class="material-icons prefix blue-grey-text darken-2">lightbulb_outline</i>
                 <input id="recipe_tips" name="recipe_tips" type="text" minlength="5"
                 maxlength="200" class="validate" value="{{ recipe.recipe_tips }}" required>
-                <label for="recipe_tips">Tips</label>
+                <label for="recipe_tips fontText">Tips</label>
             </div>
         </div>
 <!--Switch Vegan -->
@@ -104,7 +104,7 @@
             <div class="input-field col s12">
                 <div class="switch">
                     <i class="material-icons prefix blue-grey-text darken-2">filter_vintage</i>
-                    <label class="blue-grey-text darken-2" for="vegan">
+                    <label class="blue-grey-text darken-2 fontText" for="vegan">
                         {% if recipe.vegan == "on" %}
                             <input type="checkbox" id="vegan" name="vegan" checked>
                         {% else %}
@@ -120,11 +120,11 @@
         <div class="row">
             <div class="col s12 center-align">
             <!--cancel button -->
-                <a href="{{ url_for('get_recipes') }}" class="btn-small blue-grey-text darken-2 white">
+                <a href="{{ url_for('get_recipes') }}" class="btn-small blue-grey-text darken-2 white fontText">
                     <i class="material-icons prefix blue-grey-text darken-2">cancel</i>
                     Cancel
                 </a>
-                <button type="submit" class="btn-small blue-grey-text darken-2 white">
+                <button type="submit" class="btn-small blue-grey-text darken-2 white fontText">
                     <i class="material-icons prefix blue-grey-text darken-2">edit</i>
                     Edit recipe  
                 </button>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-center-align">Register</h3>
+<h3 class="center-center-align fontHeader">Register</h3>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -11,7 +11,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2 Small">account_circle</i>                    
                 <input id="username" name="username" type="text" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                <label for="username">Username</label>
+                <label for="username fontText">Username</label>
             </div>
         </div>
         <!-- password -->
@@ -19,12 +19,12 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix blue-grey-text darken-2 Small">lock</i>
                 <input id="password" name="password" type="password" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                <label for="password">Password</label>
+                <label for="password fontText">Password</label>
             </div>
         </div>
         <!-- register -->
         <div class="row">
-            <button type="submit" class="col s12 btn-large blue-grey-text light-darken-2 brown lighten-5">
+            <button type="submit" class="col s12 btn-large blue-grey-text light-darken-2 brown lighten-5 fontText">
                 Register <i class="material-icons prefix blue-grey-text darken-2"></i>                    
             </button>
         </div>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="row">
-    <div class="col s12">
+    <div class="col s12 fontText">
         <p class="center-align">
         Already registered? 
         <a href="{{ url_for('login') }}" class="blue-grey-text darken-2">Log In</a>

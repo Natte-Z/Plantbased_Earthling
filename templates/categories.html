@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="blue-grey-text darken-2">All categories</h4>
+<h4 class="fontHeader textColor">All categories</h4>
 
 <div class="row">
     {% for category in categories %}
         <div class="col s12 m4">
-        <div class="card blue-grey-text darken-2 white">
+        <div class="card">
             <div class="card-image">
                 <img src="{{category.category_url}}">
-                <span class="card-title">{{ category.category_name }}</span>
+                <span class="card-title fontText">{{ category.category_name }}</span>
             </div>
-            <div class="card-action blue-grey-text darken-2 white">
-                <a href="{{ url_for('get_recipes', category_id=category._id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+            <div class="card-action">
+                <a href="{{ url_for('get_recipes', category_id=category._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
                     View
                 </a>
             </div>

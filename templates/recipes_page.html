@@ -5,7 +5,7 @@
 
 <div class="row">
 
-    <div class="recipe_headline">
+    <div class="recipe_headline fontHeader">
         <h2>{{recipe.recipe_name}}</h2>
         <div class="row">
             <p>Created by: {{recipe.created_by}}</p>
@@ -16,27 +16,27 @@
         <img class="recipe_image" src="{{recipe.image_url}}" alt="recipe_image">
     </div>
     <!-- recipe_info -->
-    <div class="recipe_description">
+    <div class="recipe_description fontText">
         <h5>{{recipe.recipe_description}}</h5>
     </div>
     <div class="recipe_basic">
         <div class="row card-panel">
             <div class="col-3">
-                <h6>Cooking time:</h6>
-                <p>{{recipe.recipe_time}}</p>
+                <h6 class="fontText">Cooking time:</h6>
+                <p class="fontText">{{recipe.recipe_time}}</p>
             </div>
             <div class="col-3">
-                <h6>Serves:</h6>
-                <p>{{recipe.recipe_serves}}</p>
+                <h6 class="fontText">Serves:</h6>
+                <p class="fontText">{{recipe.recipe_serves}}</p>
             </div>
             <div class="col-3">
-                <h6>Difficulty</h6>
-                <p>{{recipe.recipe_difficulty}}</p>
+                <h6 class="fontText">Difficulty</h6>
+                <p class="fontText">{{recipe.recipe_difficulty}}</p>
             </div>
         </div>
     </div>
     <!-- recipe_ingredients -->
-    <div class="recipe_ingredients">
+    <div class="recipe_ingredients fontText">
         <h5>Recipe Ingredients</h5>
         <ul>
             {% for ingredient in recipe.recipe_ingredients %}
@@ -48,7 +48,7 @@
         </ul>
     </div>
     <!-- recipe_instructions -->
-    <div class="recipe_instructions">
+    <div class="recipe_instructions fontText">
         <h5>Recipe Instructions</h5>
         <ul>
             {% for instruction in recipe.recipe_instructions %}
@@ -59,7 +59,7 @@
         </ul>
     </div>
     <!-- recipe_tips -->
-    <div class="recipe_tips">
+    <div class="recipe_tips fontText">
         <h5>Recipe Tips</h5>
         <ul>
             {% for tip in recipe.recipe_tips %}
@@ -74,13 +74,13 @@
         {% if session.user|lower == recipe.created_by|lower %}
             <div class="col-6">
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
-                class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+                class="waves-effect waves-light btn-small blue-grey-text darken-2 white fontText">
                     <i class="material-icons left">edit</i>
                     Edit
                 </a>
             </div>
             <div class="col-6">
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small blue-grey-text darken-2 white fontText">
                     <i class="material-icons left">delete</i>
                     Delete
                 </a>

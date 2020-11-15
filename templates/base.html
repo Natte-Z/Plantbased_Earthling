@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -17,23 +18,31 @@
     <div class="navbar-fixed">
         <nav class="navTextColor nav-extended">
             <div class="nav-wrapper ">
-            <a href="{{ url_for('get_recipes') }}" class="brand-logo center">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" width="200" height="62" class="responsive" > 
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger navTextColor"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_recipes') }}" class="navTextColor">Home</a></li>
-                <li><a href="{{ url_for('get_categories') }}" class="navTextColor">Categories</a></li>
-                <li><a href="{{ url_for('contact') }}" class="navTextColor">Contact</a></li>
-                {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
-                    <li><a href="{{ url_for('add_recipe') }}" class="navTextColor">Add Recipe</a></li>
-                    <li><a href="{{ url_for('logout') }}" class="navTextColor">Log Out</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}" class="navTextColor">Register</a></li>
-                {% endif %}
-            </ul>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo center">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" width="200" height="62" class="responsive" > 
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger navTextColor"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_recipes') }}" class="navTextColor">Home</a></li>
+                    <li><a href="{{ url_for('get_categories') }}" class="navTextColor">Categories</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="navTextColor">Contact</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}" class="navTextColor">Profile</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}" class="navTextColor">Add Recipe</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="navTextColor">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}" class="navTextColor">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}" class="navTextColor">Register</a></li>
+                    {% endif %}
+                </ul>
+                <div class="socialIcons">
+                <ul>
+                    <a href="https://www.facebook.com/SwedishRecipes" target="_blank" class="waves-effect waves-light btn-floating social facebook socialIcons">
+                        <i class="fa fa-facebook icons"></i></a>
+                    <a href="https://www.instagram.com/swedishfoodstories/" target="_blank" class="waves-effect waves-light btn-floating social instagram socialIcons">
+                        <i class="fa fa-instagram icons"></i></a>
+                </ul>
+                </div>
             </div>
         </nav>
     </div>
@@ -74,14 +83,18 @@
         {% endblock %}
     </main>
 
+<!-- footer -->
     <footer class="page-footer footer">
-         
             <div class="container">
-            © 2020 Plantbased Earthling Copyright
-            <a class="grey-text text-lighten-4 right" href="#!">Social Media</a>
-            </div>
-          
-        </footer>
+                <ul>
+                    <p> © 2020 Plantbased Earthling Copyright</p>
+                    <a href="https://www.facebook.com/SwedishRecipes" target="_blank" class="waves-effect waves-light btn-floating social facebook socialIcons">
+                    <i class="fa fa-facebook icon"></i></a>
+                    <a href="https://www.instagram.com/swedishfoodstories/" target="_blank" class="waves-effect waves-light btn-floating social instagram socialIcons">
+                    <i class="fa fa-instagram icon"></i></a>
+                </ul>
+            </div>        
+    </footer>
 
    
 
