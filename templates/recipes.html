@@ -14,7 +14,7 @@
 				<!--  Recipe image -->
 				<img src="{{ recipe.image_url }}" class="responsive-img" />
 				<div class="card-title">
-					<span class="fontText">{{ recipe.recipe_name }}</span>
+					<span class="fontHeader fontText">{{ recipe.recipe_name }}</span>
 				</div>
 			</div>
 
@@ -30,31 +30,40 @@
 			</div>
 			<div class="card-action fontSmall">
 
-				<div class="col s4 valign-wrapper">
-                	<i class="material-icons blue-grey-text darken-2">access_time</i>{{ recipe.recipe_time }}
-                </div>
-
-				
-			<div class="col s4 valign-wrapper">
-                <i class="material-icons blue-grey-text darken-2">dashboard</i>
-                {{ recipe.category_name }}
-                </div>
-
-			<div class="col s4 valign-wrapper">
-                 <i class="material-icons blue-grey-text darken-2">person</i>
-                {{ recipe.created_by }}
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons blue-grey-text darken-2">access_time</i>{{ recipe.recipe_time }}
+				</div>
 
 
-                	{% if recipe.vegan == "on" %}
-				<i class="material-icons blue-grey-text darken-2 white tooltipped left"
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons blue-grey-text darken-2">dashboard</i>
+					{{ recipe.category_name }}
+				</div>
+
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons blue-grey-text darken-2">person</i>
+					{{ recipe.created_by }}
+
+
+				</div>
+
+
+                <div class="col s3 valign-wrapper">
+					
+					{% if recipe.vegan == "on" %}
+					<span>
+						<i class="material-icons blue-grey-text darken-2 white tooltipped left"
                     data-tooltip="Vegan">filter_vintage</i>
-				{% endif %}
-                
-                </div>
+
+					</span>
+					{% endif %}
+
+
+				</div>
 
 
 
-			
+
 
 
 

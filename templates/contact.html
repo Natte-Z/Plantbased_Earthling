@@ -9,30 +9,32 @@
          })();
       </script>
 </head>
-<section>
+<!--Contact_form -->
+
          <div class="contactForm">
-            <div class="container bg-color-contact">
-               <p class="contactHeading uppercase text-center fontHeader">Let us know what you think!</p>
+               <p class="center-align fontHeader textColor contactTitle">Any more recommendations on how to make this website more fabulous and spread the love? </p>
+            <div class="row">
+                <form class="col l6 s12">
+                <div class="row card-panel">
+                    <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" name="name" class="form-control fontText" id="name" placeholder="Full Name" required/>
+                    <label for="icon_prefix">Full Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" name="emailaddress" class="form-control fontText" id="emailaddress" placeholder="Email" required/>
+                    <label for="icon_telephone">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                    <textarea rows="5" name="questionsummary" class="form-control fontText" id="questionsummary" placeholder="Question" required></textarea>
+                    </div>
+                </div>
+                </form>
+                <div class="col l6 s12 contactImage">
+                    <img src="../images/contactimage.png" class="responsive-img" alt="contactimage"/>
+                </div>
             </div>
-            <div class="container bg-color-contact">
-               <p class="contactText uppercase text-center fontText">Write us a message with your feedback or if you have other ideas for this website!</p>
-            </div>
-            <div class="row justify-content-md-center">
-               <div class="contactBoxWrapper col-lg-6 ">
-                  <div class="center-form contactBox">
-                     <p>
-                     <p class="contactFormTitle fontHeader">Contact form</p>
-                     </p>
-                     <form onsubmit="return sendMail(this);" class="form">
-                        <input type="text" name="name" class="form-control fontText" id="name" placeholder="Full Name" required/>
-                        <input type="email" name="emailaddress" class="form-control fontText" id="emailaddress" placeholder="Email" required/>
-                        <textarea rows="5" name="questionsummary" class="form-control fontText" id="questionsummary" placeholder="Question" required></textarea>
-                        <button type="submit" class="btn btn-secondary center-block contactButton fontText">Send</button>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+        </div>
 
 {% endblock %}

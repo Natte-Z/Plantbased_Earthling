@@ -5,7 +5,7 @@
 
 <div class="row">
 
-    <div class="recipe_headline fontHeader">
+    <div class="recipe_headline textOrange fontHeader">
         <h2>{{recipe.recipe_name}}</h2>
         <div class="row">
             <p>Created by: {{recipe.created_by}}</p>
@@ -16,22 +16,22 @@
         <img class="recipe_image" src="{{recipe.image_url}}" alt="recipe_image">
     </div>
     <!-- recipe_info -->
-    <div class="recipe_description fontText">
+    <div class="recipe_description fontText textColor">
         <h5>{{recipe.recipe_description}}</h5>
     </div>
     <div class="recipe_basic">
         <div class="row card-panel">
-            <div class="col-3">
-                <h6 class="fontText">Cooking time:</h6>
-                <p class="fontText">{{recipe.recipe_time}}</p>
+            <div class="col-3 textColor fontText">
+                <h6>Cooking time:</h6>
+                <p>{{recipe.recipe_time}}</p>
             </div>
-            <div class="col-3">
+            <div class="col-3 textColor fontText">
                 <h6 class="fontText">Serves:</h6>
                 <p class="fontText">{{recipe.recipe_serves}}</p>
             </div>
-            <div class="col-3">
-                <h6 class="fontText">Difficulty</h6>
-                <p class="fontText">{{recipe.recipe_difficulty}}</p>
+            <div class="col-3 textColor fontText">
+                <h6>Difficulty</h6>
+                <p class="textBeige">{{recipe.recipe_difficulty}}</p>
             </div>
         </div>
     </div>

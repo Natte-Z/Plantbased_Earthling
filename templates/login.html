@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-center-align fontHeader">Login</h3>
+<h3 class="center-center-align fontHeader textOrange">Login</h3>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
@@ -9,23 +9,23 @@
       <!-- username -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix blue-grey-text darken-2 Small">add_circle</i>                    
+                <i class="material-icons prefix textColor Small">add_circle</i>                    
                 <input id="username" name="username" type="text" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                <label for="username">Username</label>
+                <label for="username textColor">Username</label>
             </div>
         </div>
         <!-- password -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix blue-grey-text darken-2 Small">lock</i>
+                <i class="material-icons prefix textColor Small">lock</i>
                 <input id="password" name="password" type="password" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                <label class="fontText" for="password">Password</label>
+                <label class="fontText textColor" for="password">Password</label>
             </div>
         </div>
         <!-- login -->
         <div class="row">
-            <button type="submit" class="col s12 btn-large blue-grey-text darken-2 fontText">
-                Log In <i class="material-icons prefix blue-grey-text darken-2"></i>                    
+            <button type="submit" class="col s12 btn-large textBackground fontText">
+                Log In                    
             </button>
         </div>
 
@@ -35,9 +35,9 @@
 
 <div class="row">
     <div class="col s12">
-        <p class="center-align fontHeader">
+        <p class="center-align fontHeader textColor">
         New Here? 
-        <a href="{{ url_for('register') }}" class="blue-grey-text darken-2 fontText">Register Account</a>
+        <a href="{{ url_for('register') }}" class="textOrange fontText">Register Account</a>
         </p>
     </div>
 </div>
