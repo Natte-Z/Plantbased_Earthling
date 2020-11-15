@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+      <script type="text/javascript">
+         (function(){
+         emailjs.init("user_TKf54NY2OBMKWEY7MGGO7");
+         })();
+      </script>
+</head>
+<section>
+         <div class="contactForm">
+            <div class="container bg-color-contact">
+               <p class="contactHeading uppercase text-center">Let us know what you think!</p>
+            </div>
+            <div class="container bg-color-contact">
+               <p class="contactText uppercase text-center">Write us a message with your feedback or if you have other ideas for this website!</p>
+            </div>
+            <div class="row justify-content-md-center">
+               <div class="contactBoxWrapper col-lg-6 ">
+                  <div class="center-form contactBox">
+                     <p>
+                     <p class="contactFormTitle">Contact form</p>
+                     </p>
+                     <form onsubmit="return sendMail(this);" class="form">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required/>
+                        <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                        <textarea rows="5" name="questionsummary" class="form-control" id="questionsummary" placeholder="Question" required></textarea>
+                        <button type="submit" class="btn btn-secondary center-block contactButton">Send</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+{% endblock %}

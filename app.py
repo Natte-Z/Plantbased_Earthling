@@ -18,9 +18,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
+@app.route("/get_recipes", defaults={"category_id": None})
+@app.route("/get_recipes/<category_id>")
+def get_recipes(category_id):
+    if not category_id:
+        recipes = list(mongo.db.recipes.find())
+    else:
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})["category_name"]
+        recipes = list(mongo.db.recipes.find({"category_name": category}))
     return render_template("recipes.html", recipes=recipes)
 
 # ---- Account (Register, login, logout) ----- #
@@ -169,6 +174,17 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe deleted!")
     return redirect(url_for("get_recipes"))
+
+# ---- categories ----- #
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+
+# ---- contact ----- #
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 # always leave in the end 
 if __name__ == "__main__":
