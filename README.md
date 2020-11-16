@@ -362,6 +362,7 @@ git add .
 ```
 git commit -m ""
 ```
+```
 git push
 6. Because I connected my Github repository to Heroku it could autp deploy the project once I pushed my code to github. 
 ```
