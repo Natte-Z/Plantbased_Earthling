@@ -2,7 +2,7 @@
 
 ## Code Institute: Milestone Project 3
 
-![Plantbased Earthling Responsive Design](https://github.com/Natte-Z/Plantbased_Earthling/blob/34fcee19518b05328adc84ef482d4e5e62b67026/static/images/responsive.png)
+![Plantbased Earthling Responsive Design](https://github.com/Natte-Z/Plantbased_Earthling/blob/master/static/images/responsive.png)
 
 *Plantbased Earthling* is an app that aims to help users prepare food and get inspired by vegetarian and vegan recipes. My aim with this project was to create an app that would be inspiring, useful and enjoyable for people to use. 
 
