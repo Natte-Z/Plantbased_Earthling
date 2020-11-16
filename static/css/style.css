@@ -7,14 +7,10 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+
 main {
     flex: 1 0 auto;
   }
-
-
-.fontSmall{
-font-size:0.8em;
-}
 
 /* Textcolor */
 .textColor {
@@ -58,8 +54,12 @@ font-size:0.8em;
 .fontText {
     font-family: 'Poppins', sans-serif; 
 }
+.fontSmall{
+    font-size:0.8em;
+}
 
 /* Recipe_html */
+
 .btn-small{
     margin: 5px;
 }
@@ -135,17 +135,83 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
 }
 
 footer div ul{
-display: block;
-margin-top:-1px;
+    display: block;
+    margin-top:-1px;
 }
 
-
 footer div ul li{
-display: inline;
-padding-left:20px;
+    display: inline;
+    padding-left:20px;
 }
 
 footer div ul li .footerSocialIcon{
     background:white;
-       color:#3A4660 !important;
+    color:#3A4660 !important;
+}
+
+/* emailalert for contactpage */
+.alert{
+    display:none;
+    text-align:center;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+#emailAlert{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+#emailFail{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+
+
+/* 
+    scroll to top button 
+    https://codepen.io/deveb22/pen/QxPmGz
+*/
+
+#scrollTopButton {
+  display: inline-block;
+  background-color: #ed8a63;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#scrollTopButton::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#scrollTopButton:hover {
+  cursor: pointer;
+  background-color: #ed8a63;
+}
+#scrollTopButton:active {
+  background-color: #ed8a63;
+}
+#scrollTopButton.show {
+  opacity: 1;
+  visibility: visible;
 }

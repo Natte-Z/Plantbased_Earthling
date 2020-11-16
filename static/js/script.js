@@ -1,10 +1,36 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $(".sidenav").sidenav();
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('input#input_text, textarea#textarea2').characterCounter();
     $('select').formSelect();
-  });
+});
+
+
+
+// scroll to top button
+var btn = $('#scrollTopButton');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+ 
+
+
+
+
+
+
 
 /*
     validateMaterializeSelect();

@@ -94,19 +94,273 @@ My research led me to the following conclusions:
 
 #### Design process: UX Design
 
-1. Strategy plane: While researching other to-do apps available to users, I realised that there wasn't one specifically aimed at users moving home. This confirmed to me that there were users who's needs had not yet been met; specifically, the need to have an app targeting users who are moving homes. In order to meet their needs, I realised that I would have to keep this particular type of user in mind throughout the design and planning process in order to create a successful app.
+1. Strategy plane: When starting the research on how to plan my online cookbook and I went through different blogs and other recipe pages the first thing that I saw that none of them have the function that users could add and edit their own recipes. I personally write down my recipes still on paper and it is annoying when at other friends places to not have the recipes. So to create an online recipe database where users could create, add, edit and delete their own recipes seemed like a need not yet solved. 
 
-2. Scope plane: With the app idea and type of user in place, I began to consider what features would be required to create a successful and useable app. I knew that a user had to be able to create their own account, manage their tasks with the help of the four CRUD functions and find the design easy to navigate as they worked their way through their list of tasks. I also wanted the app to be personalised, with a user's chosen Username to feature in the design (for example, '"Welcome back 'Username!'"). Furthermore, I also wanted to include a feature to allow users to share their ideas with others, and delete and update the tips that they've added on the community board.
+2. Scope plane: With the app idea and type of user that I wanted to create the app for, the next step would be the features. Those included account creation, managing of recipes with the CRUD functions and an easy design to navigate through. I also wanted the app to be personalised, with a user's chosen Username to feature in the design (for example, '"Welcome back 'Username!'"). Furthermore, I also wanted to allow the user to leave a message to me, the admin to give feedback and just share their ideas on how to improve the website. 
 
-3. Strcuture plane: Once I had narrowed down what features I wanted to include, I began to consider the structure of my design. I realised that the website would have to be presentable to external users browsing through the pages with open access, whilst creating certain pages that are only accessible to users logged in with their account. To create this distinction, I decided that the menu bar would change, with standard items being 'Home', 'Top Tips', 'Sign In' and 'Sign Up', whilst users who are logged in would see see same basic items, but would notice 'My Tasks' (instead of 'Sign In') and 'Sign Out' (instead of 'Sign Up'). This decision was made for a better user experience, as I realised that a registered user who was already logged in would not want to see the 'Sign In'/ 'Sign Up' items in their menu bar. I also made the decision that a user would be able to navigate to the 'Edit task' and 'Add new task' pages through button prompts on their 'My Tasks' page, as these functions are only possible when a user is logged in.
+3. Strcuture plane: Once I had narrowed down what features I wanted to include, I began to consider the structure of my design. I realised that the website would have to be presentable to external users browsing through the pages with open access, whilst creating certain pages that are only accessible to users logged in with their account. To create this distinction, I decided that the menu bar would change, with standard items being 'Home', 'Categories', 'Contact', 'Login' and 'Register', whilst users who are logged in would see the same taps, but would also include 'Categories', 'Profile', 'Add Recipe' and 'Log Out' instead of the Register and Login options. This decision was made for a better user experience, as I realised that a registered user who was already logged in would not want to see the 'Sign In'/ 'Sign Up' items in their menu bar. I also made the decision that a user would be able to navigate to the 'Edit recipe' and 'delete recipe' pages through button prompts on the recipe views page, as these functions are only possible when a user is logged in.
 
-4. Skeleton plane: With the concept and structure in place, I began to plan the navigation route through the design. After opening the website, a new user would immediately be able to access the 'Sign Up' page by noticing a button with the same name in the menu bar (and this standard button design would reappear throughout the design to continue to prompt a new user to sign up). Conversely, existing users could either choose to sign in from the menu, or scroll down to the bottom of this page to find a 'sign in' button prompt. If, however, the user does neither of those steps and chooses to click on the next item in the menu - 'Top Tips' - they would see a list of recommended tasks to consider before moving home. This page then contains a prompt for users to add their own tips to the community board - if they are signed in, the form to do so is visible. Otherwise, they are directed to the sign in/ sign up page respectively and the 'submit' form is hidden. From this page, regardless of whether the user chooses to navigate to the 'Sign Up' or the 'Sign In' page, they will see the same basic page structure: a form to either sign up or sign in (depending on the page they clicked on), a prompt to direct them to the other (if they choose the wrong link) and a feature image.
-Regardless of which form they complete and submit, they are navigated to a personalized 'My Tasks' page for their account, which either shows their existing tasks if they are a returning user, or a prompt to add tasks if their list is empty. Clicking on the 'Add new task' button takes them to a page to create a new task which is then visible in their list. By clicking on this task, they can either mark it as complete, delete it or edit it (by being redirected to a 'Edit task' page). Once satisfied with their use of the app, they can click on the 'Sign Out' button and return to the external design and the 'Sign In' page.
+4. Skeleton plane: With the concept and structure in place, I began to plan the navigation route through the design. After opening the website, a new user would be able to see all recipes, the contact page as well as the register and sign in function. It was important for me that users could still see all recipes without having to create an account, because I wanted a very open and welcoming website. Nowadays I believe that there are too many websites that want to create an account and that without that no function is possible, I wanted to create something different. Existing users, however, are able to see the categories option as well as are able to edit and delete their own recipes, not the ones from other users. In addition the existing users also have a profile page, which shows all of the recipes that they have created. 
 
 5. Surface plane: 
-    * The main stylistic decision I made early on was to keep the design as sleek, modern and simplistic as possible, to prevent the design from distracting the user from their use of the app. However, I did not want this decision to compromise the user experience, so I chose to rely on illustrations and graphics instead of photos to bring color and life to the app. My search for graphics led me to find [unDraw](https://undraw.co/), which is a great resource of open source illustrations that can be personalised after your chosen HEX color value.
-    * With the idea of the type and style of design that I was after, I started a workspace on [Figma](https://www.figma.com/file/Hv9GYC33ydTGLuwIxydgRr/Code-Institute?node-id=170%3A2) and began experimenting with my wireframes for desktop, tablet and mobile devices. As with my earlier two Milestone Projects, I found it useful to have my hero image in place, as doing so prompts me to choose the tone and theme for the rest of the design. I selected one of the images I had chosen from unDraw and personalised it with a color palette I had created with [coolors](https://coolors.co/), as shown below. I chose this palette as the colors were modern yet toned down to offer a calm and welcoming feeling to users looking for help when planning their move.
-    * I turned to Google Fonts to select the fonts for my project. I wanted to find two compatible fonts that were modern and would look good in a light font weight to complement the simplistic design. I found that Roboto and Quicksand met these criteria. 
-    * I began to take note of certain features that I would add later on with JavaScript. These included an arrow button in the footer to scroll smoothly back to top, a menu bar that would fill the background color on scroll down and 'copy url' icon to encourage useres to share the app with others.
+    * As this is my third milestone project I wanted to use more colours in the beginning and created a really interesting colour scheme for this project. Moreover, I wanted the website to still show a modern design, that would keep the user interested in the website. The simplicity was shown in the fact, that all recipes are first shown in card panels with only a picture and a few small details, like category (e.g. dessert), cooking time, the name of the user that created the recipe and an extra function that shows whether a recipe is vegan. Later on in the process I realised that my colour scheme was too aggressive for this project, because the user experience gets highlighted by many recipe pictures that can be colourful, because the user itself chooses them. So that keep that in mind I changed a little bit of my colourscheme, especially for background colours to keep it more simple and sustainable in the long-term. For my first own recipes I used the website unsplash.com, which provides great pictures that can be freely used without any IP's on them. 
+    * With the idea of the type and style of design that I was after, I started a wireframe on [Figma](https://www.figma.com/file/U8j2oct9s0U0jnaDaLlSSK/Milestone-Project-III?node-id=0%3A1) and began experimenting with my wireframes. As with my earlier two Milestone Projects, I found it useful to have my hero image in place, as doing so prompts me to choose the tone and theme for the rest of the design. 
+    * I also used tailorbrands.com free function to include a modern logo and some images throughout the website to make it look more professional. 
+    * I turned to Google Fonts to select the fonts for my project. I wanted to find two compatible fonts that were modern and would look good in a light font weight to complement the simplistic design. I found that Heebo and Poppins met these criteria and showed a difference to my earlier used fonts. 
+    * I began to take note of certain features that I would add later on with JavaScript. These included an arrow button in the footer to scroll smoothly back to top and a contact page that connects with Email Js. 
 
 > Note: Throughout the design process, I kept referring back to my original 'Main Aims', 'User Stories' and preliminary research to make sure that my project was developing as intended.
+
+### Documenting the design process
+
+Selected color palette:
+![Color palette created with visme.co](https://visme.co/blog/website-color-schemes/)
+The colours for this were:
+French Laundry Blue: #3a4660
+Comfortably Tan: #c9af98
+Peachy Kreme: #ed8a63
+Brown Bonnet: #845007
+
+[The entire workspace can be viewed on Figma with this link.](https://www.figma.com/file/U8j2oct9s0U0jnaDaLlSSK/Milestone-Project-III?node-id=0%3A1)
+
+## Features
+
+### Existing Features
+
+This project consists of nine pages, five of which can only be accessed after a user has created an account and signed in.
+
+#### Database structure
+
+The data for this project is stored in my MongoDB database within three collections as follows:
+- *Users* - This collection stores the user's username and their enctrypted password created when they signed up to Plantbased Earthling.
+- *Recipes* - When a user creates a task, it is stored within this collection with the following information: image_url, category_name, recipe_name, recipe_serves, recipe_time, recipe_difficulty, recipe_description, recipe_ingredients, recipe_instrcutions, recipe_tips extra function of “vegan” (yes or no) and created_by. 
+- *Categories* - The categories of the dishes which can be starters, mains and desserts. 
+
+#### Consistent features across all pages
+
+- The menu at the top of the page and footer are consistent in design and responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.
+- Each page features a 'scroll to top' button that becomes visible when the user has scrolled down on the page, this will be especially useful once more recipes are on the page.
+- All buttons are designed consistently in their respective colors across the app.
+- All flash messages appear under the menu bar with the same font and color throughout the app.
+
+#### Home/Recipes 
+
+- The user sees directly all the recipes, so that they dont need to click through more pages to get to what they are looking for on the website. 
+- On larger screens the user sees three card panels of the recipes in a row and they minimize to two on medium size devices and one on a smartphone. 
+- On the card panel is a button that will lead the user to the full recipe, as on the homepage they will only see short informations of the recipe
+- I decided on this design feature so that the user has a better overview of all the recipes and doesnt get flashed with too much information directly
+
+### Categories
+
+- This page features the three categories.
+- The user has the option to click on one of the categories to only see recipes that belong to that category. 
+
+### Contact
+
+- Here the user, whether logged in or not, has the possibility to leave a comment or question.
+- I wanted this function to be open so that every user has the possbility to leave feedback also without having to have to make an account. 
+
+#### Profile
+
+- Once a user has either signed up or signed in, they are directed to their 'Profile' page with an overview of their own created recipes, if they have any. 
+- If they have recipes they can view them through the "view" button. 
+
+#### Add Recipe
+
+- This page offers a form to the user with all the information that a new recipe needs. Most of the fields are required, but some like the vegan function and the tipsinput field are of free choice. 
+- The form includes all the values that are within the mongo DB database.
+- - A flash message is shown that the adding has been done once the user clicks the button and then the user is redirected to the home page. 
+
+#### Recipes page
+
+- This is the page that shows the whole recipe. 
+- In the end it includes the edit and delete button, which gives the user that has created the recipe and the admin the option to use them. 
+
+#### Edit recipe
+
+- This site is similar to the add_recipes page, however the information that was filled out when creating a recipe is directly shown in the input fields, so that it is easier for the user to edit them. 
+- A flash message is shown that the editing has been done once the user clicks the button and then the user is redirected to the home page. 
+
+#### Register
+- This is a simple page which offers the user the possibility to register for the page.
+- The code has been structured in a way that it stores a secret key for the password in the database and recognizes if a username has already been used. 
+
+#### Log In
+- Here the user can login. 
+- There is another link at the end which redirects the user to the register page if they haven't created an account yet. 
+
+#### Log Out
+- The logout is less a page and more a function within the navbar, that logs the user out and redirects them to the login page. 
+
+### Features Left to Implement
+
+- I think that there is a lot of potential to further develop this app, which is unfortunately beyond the scope and time frame of this Milestone Project with *The Code Institute*. 
+
+- It could be useful to create a 'profile' page where users could update their information, including changing their password and adding a profile image.
+
+- I would also consider adding a feature to report bugs found back to me, to be able to improve the app for future users as and when issues are found.
+
+- It would be also nice to include a "favourite" button within the recipes that would save recipes to the profile page of the user. 
+
+## Technologies Used
+
+### Languages, libraries, databases, frameworks, editors and version control
+
+- HTML5
+    * The language used to create add structure and content to the website.
+- CSS
+    * The language used to style the HTML5 elements according to the design colour scheme.
+- JavaScript
+    * The languge used to make the app interactive, including the use of the sendEmail.js functionality. 
+- [jQuery](https://jquery.com/)
+    * I used the jQuery library to help write the JavaScript code used in this project.
+- Python
+    * The programming languaged used to create the back-end function of the app.
+- PyMongo
+    * PyMongo was used as the Python API for MongoDB. This API enabled me to link the data from the back-end database to the front-end app.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    * The Python microframework used to help write the Python code for this project.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+    * Jinja templating language was used with Flask in the HTML code. This allowed for template inheritance from the base.html file and to link the back-end to the front-end. 
+- [MongoDB](https://www.mongodb.com/)
+    * This was the selected database chosen to store data in the cloud.  
+- [MaterliazeCss framework](https://materializecss.com/) 
+    * I used the MaterliazeCss container system as I wanted to design my project with a good responsiveness. I also used different functions from materliaze to make the app more interactive, e.g. forms, selectors, radius as well as icons.  
+- [Gitpod](https://www.gitpod.io/)
+    * I relied on Gitpod's dev environment to write the code for my project.
+- [Git Version Control](https://git-scm.com/)
+    * I used Git for Version Control to track and record changes to my code and refer back when needed.
+- [GitHub](https://github.com/)
+    * I used GitHub as my remote repository, to push to and store the commited changes to my app from Git.
+- [Heroku](https://www.heroku.com/)
+    * I used Heroku as a hosting platform to deploy the live version of my app. 
+
+### Additional tools used
+- [Figma](https://www.figma.com/) 
+    * Figma helped me design my project, by creating wireframes this project. 
+- [FontAwesome](https://fontawesome.com/) 
+    * I relied on free FontAwesome icons, including different icons for the social media.  
+- [Google Fonts](https://fonts.google.com/)
+    * I used two complementary fonts from Google for my project: Heebo and Poppins. 
+- [Tailor Brands](https://www.tailorbrands.com/) 
+    * I used this to create a nice logo and some more images for my app. 
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    * This was a great tool throughout the project to check whether there were any errors in my HTML and CSS code (as discussed in more detail in the Testing section).
+ - [JSHint](https://jshint.com/) 
+    * This tool helped me test my JavaScript and jQuery code (explained in more detail in the Testing section). 
+- [PEP 8 online](http://pep8online.com/)
+    * I used PEP 8 to check that my Python code complied with formatting standards.
+
+## Testing
+
+### Testing User Stories
+The following tests were conducted to test the experience of each user outlined earlier in the 'User Stories' section.
+
+#### Project stakeholders
+
+- As the creator of this project, I wanted to make sure that users would actually find value in using this app as that would provide an incentive for them to return to it. To achieve this goal, I have created a project that is easy to navigate and intuitive to use, allowing the user to immediately learn how to make the most of its features. Recipes are easy to add, edit, delete and view, allowing the user to focus on enjoying the process of cooking. 
+
+## Testing
+
+To return to the previous document, please click [here](https://github.com/mkthewlis/Milestone-Project-3/blob/master/README.md).
+
+- [**Testing User Stories**](#Testing-User-Stories)
+    - [Project Stakeholders](#Project-stakeholders)
+    - [New users](#New-users)
+    - [Returning users](#Returning-users)
+    - [Tablet user](#Tablet-user)
+- [**Validators and Lintners**](#Validators-and-lintners)
+    - [HTML](#HTML)
+    - [CSS](#CSS)
+    - [JavaScript](#JavaScript)
+    - [Python](#Python)
+- [**Compatibility tests**](#Compatibility-tests)
+    - [Using different browsers](#Using-different-browsers)
+    - [Using different devices](#Using-different-devices)
+    - [Using different screen sizes](#Using-different-screen-sizes)
+- [**Manual tests**](#Manual-tests)
+    - [Menu bar](#Menu-bar)
+    - [Footer](#Footer)
+    - [Home](#Home)
+    - [Top Tips](#Top-tips)
+    - [Sign-in](#Sign-in)
+    - [Sign-up](#Sign-up)
+    - [My tasks](#My-tasks)
+    - [Add a new task](#Add-a-new-task)
+    - [Edit task](#Edit-task)
+
+### Testing User Stories
+
+The following tests were conducted to test the experience of each user outlined earlier in the 'User Stories' section.
+
+#### Project stakeholders
+
+- As the creator of this project, I wanted to make sure that users would actually find value in using this app as that would provide an incentive for them to return to it. To achieve this goal, I have created a project that is easy to navigate and intuitive to use, allowing the user to immediately learn how to make the most of its features. There are prompts to sign in or sign up throughout the project, and once a user has signed in, they can navigate the internal pages from their personalised Overview page. Tasks are easy to add, edit, delete and mark as complete, allowing the user to focus on enjoying the process of getting ready to move home, which is the goal of this app.
+- I also wanted to make it easy for the community of MoveOn users to share their own tips with other users. This is achieved through the 'Top Tips' page, where users can contribute to the list of tips with their own recommendations. These can only be added when a user has signed in and they can only edit and delete their own recommendations.
+
+#### New users
+
+- The new user who relies on technology for all aspects of their lives would find this app useful when cooking. They would find that it's easy to set up an account and begin to add, edit and delete their own recipes. They can find recipes easily through the categories which saves them time. 
+- The young user who has never really cooked before would find that this helps them that cooking is actually not so hard and with the different difficulty levels have a better understanding. 
+
+#### Returning users
+
+- The user who had already created an account and wanted to add more recipes to their list could do so with a few simple steps: they would just directly click on "add_recipe" fill out the form and the recipe would show on their profile and on the home site. 
+
+## Deployment
+
+This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. 
+
+The deployed project can be viewed on the following link: [Plantbased Earthling: Live Website](xx)
+
+The project's GitHub repository can be viewed with the following link: [Plantbased Earthling: GitHub Repository](xx)
+
+### Deploying this project to Heroku 
+To deploy the project to Heroku, I used the following steps:
+
+1. I created a Heroku account, signed in and created a new app with a unique name that had not already been taken (this project uses 'ms3-move-on'). I then set the region to the closest to me: 'Europe'.
+2. With the app created, I went to the 'Settings' tab and clicked the 'Reveal Config Variables' button. From here, I input the following values:
+```
+MONGO_URI: mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority
+IP: 0.0.0.0
+PORT: 5000
+```
+(Note: within the MONGO_URI value, I replaced the 'username','password', 'cluster_name' and 'database_name' with my specific database values. They are kept private for security reasons.)
+
+3. In Gitpod, I created a requirements.txt file with the following command:
+```
+pip3 freeze --local > requirements.txt
+```
+4. I then created a Procfile with the following content within (making sure that 'Procfile' was written with a capitalized 'P'):
+```
+echo web: python app.py > Procfile
+```
+5. I then committed these new files with the following:
+```
+git add .
+```
+git commit -m ""
+```
+git push
+6. Because I connected my Github repository to Heroku it could autp deploy the project once I pushed my code to github. 
+
+## Credits
+
+### Content
+
+The content of this website is entirely fictional and written by myself.
+
+### Images
+
+The images are all from unsplash.com, which is an open source of illustrations. 
+
+### Acknowledgements
+
+Thank you to the following people who helped with support and inspiration:
+
+- My mentor Seun Owonikoko for her attention to detail throughout the development process
+- My send mentor Antonio Rodriguez for helping me in the final hours.  
+- A special thanks to the talented *Code Institute* tutors Tim and Johann for their advice, guidance and support 
+- All the other tutors that helped me through problems. 
+- My friend Vuong, who helped me to understand JavaScript on a new level and guided me through design decisions. 
+- And my roommates for helping me through the time, giving advise and feedback on the UX and just supporting me. 
