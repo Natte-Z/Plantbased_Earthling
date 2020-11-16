@@ -144,7 +144,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     if request.method == "POST":
         vegan = "on" if request.form.get("vegan") else "off"
-        print(request.form.get('image_url'))
+        print(request.form.get("image_url"))
         submit = {
             "image_url": request.form.get("image_url"),
             "category_name": request.form.get("category_name"),
