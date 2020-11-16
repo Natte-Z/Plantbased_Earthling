@@ -1,13 +1,13 @@
  {% extends "base.html" %}
  {% block content %}
 
-    <h3 class="textColor fontHeader">Edit Recipes</h3>
+    <h3 class="textOrange fontHeader">Edit Recipes</h3>
 
 <!--Recipe form -->
   <div class="row recipe_form card-panel">
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
 <!--Recipe image-->
-        <div class="input-field col s6">
+        <div class="input-field col s12">
           <i class="material-icons prefix textColor">crop_free</i>
           <input id="image_url" name="image_url" type="text" class="validate" value="{{ recipe.image_url }}">
           <label class="textColor fontText" for="image_url">Insert a URL for the image</label>
@@ -60,10 +60,9 @@
                 </div>
             </div>
         </div>
-
 <!--description-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix textColor">list</i>
                 <textarea id="recipe_description" name="recipe_description" minlength="5"
                 maxlength="30" class="materialize-textarea validate" required>
@@ -74,29 +73,29 @@
         </div>
 <!--ingredients-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix textColor">local_offer</i>
                 <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="5"
-                maxlength="200" class="validate" value="{{ recipe.recipe_ingredients|join(';') }}" required>
-                <label for="recipe_ingredients fontText">Ingredients</label>
+                maxlength="300" class="validate" value="{{ recipe.recipe_ingredients|join(';') }}" required>
+                <label for="recipe_ingredients fontText">Ingredients (seperate each item with a ";")</label>
             </div>
         </div>
 <!--instructions-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix textColor">announcement</i>
                 <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="5"
-                maxlength="200" class="validate" value="{{ recipe.recipe_instructions|join(';') }}" required>
-                <label for="recipe_instructions fontText">Instructions</label>
+                maxlength="400" class="validate" value="{{ recipe.recipe_instructions|join(';') }}" required>
+                <label for="recipe_instructions fontText">Instructions (seperate each item with a ";")</label>
             </div>
         </div>
 <!--tips-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix textColor">lightbulb_outline</i>
                 <input id="recipe_tips" name="recipe_tips" type="text" minlength="5"
-                maxlength="200" class="validate" value="{{ recipe.recipe_tips|join(';') }}" required>
-                <label for="recipe_tips fontText">Tips</label>
+                maxlength="200" class="validate" value="{{ recipe.recipe_tips|join(';') }}">
+                <label for="recipe_tips fontText">Tips (seperate each item with a ";")</label>
             </div>
         </div>
 <!--Switch Vegan -->

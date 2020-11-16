@@ -25,21 +25,22 @@
     <div class="recipe_description fontText textColor">
         <h5>{{recipe.recipe_description}}</h5>
     </div>
-    <div class="recipe_basic">
-        <div class="row card-panel">
-            <div class="col-3 textColor fontText">
-                <h6>Cooking time:</h6>
-                <p class="textBeige">{{recipe.recipe_time}}</p>
-            </div>
-            <div class="col-3 textColor fontText">
-                <h6>Serves:</h6>
-                <p class="textBeige ">{{recipe.recipe_serves}}</p>
-            </div>
-            <div class="col-3 textColor fontText">
-                <h6>Difficulty</h6>
-                <p class="textBeige">{{recipe.recipe_difficulty}}</p>
-            </div>
+    <div class="recipe_basic card-panel">
+        <div class="col-4 textColor fontText">
+            <i class="material-icons prefix textColor">timer</i>
+            <h6>Cooking time(min):</h6>
+            <p class="textBeige">{{recipe.recipe_time}}</p>
         </div>
+        <div class="col-4 textColor fontText">
+            <i class="material-icons prefix textColor left">view_module</i>
+            <h6>Serves:</h6>
+            <p class="textBeige ">{{recipe.recipe_serves}}</p>
+        </div>
+        <div class="col-4 textColor fontText">
+            <i class="material-icons prefix textColor">traffic</i>
+            <h6>Difficulty</h6>
+            <p class="textBeige">{{recipe.recipe_difficulty}}</p>
+        </div> 
     </div>
     <!-- recipe_ingredients -->
     <div class="recipe_ingredients fontText textColor">
@@ -77,7 +78,7 @@
     </div>
     <!-- recipe_edit_button --> <!-- recipe_delete -->
     <div class="row">
-        {% if session.user|lower == recipe.created_by|lower %}
+        {% if session.user|lower == recipe.created_by|lower or session.admin%}
             <div class="col-6">
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
                 class="waves-effect waves-light btn-small textBackground fontText">

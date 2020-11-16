@@ -264,31 +264,6 @@ The following tests were conducted to test the experience of each user outlined 
 
 To return to the previous document, please click [here](https://github.com/mkthewlis/Milestone-Project-3/blob/master/README.md).
 
-- [**Testing User Stories**](#Testing-User-Stories)
-    - [Project Stakeholders](#Project-stakeholders)
-    - [New users](#New-users)
-    - [Returning users](#Returning-users)
-    - [Tablet user](#Tablet-user)
-- [**Validators and Lintners**](#Validators-and-lintners)
-    - [HTML](#HTML)
-    - [CSS](#CSS)
-    - [JavaScript](#JavaScript)
-    - [Python](#Python)
-- [**Compatibility tests**](#Compatibility-tests)
-    - [Using different browsers](#Using-different-browsers)
-    - [Using different devices](#Using-different-devices)
-    - [Using different screen sizes](#Using-different-screen-sizes)
-- [**Manual tests**](#Manual-tests)
-    - [Menu bar](#Menu-bar)
-    - [Footer](#Footer)
-    - [Home](#Home)
-    - [Top Tips](#Top-tips)
-    - [Sign-in](#Sign-in)
-    - [Sign-up](#Sign-up)
-    - [My tasks](#My-tasks)
-    - [Add a new task](#Add-a-new-task)
-    - [Edit task](#Edit-task)
-
 ### Testing User Stories
 
 The following tests were conducted to test the experience of each user outlined earlier in the 'User Stories' section.
@@ -306,6 +281,52 @@ The following tests were conducted to test the experience of each user outlined 
 #### Returning users
 
 - The user who had already created an account and wanted to add more recipes to their list could do so with a few simple steps: they would just directly click on "add_recipe" fill out the form and the recipe would show on their profile and on the home site. 
+
+### Validators and lintners
+
+#### HTML
+My HTML code was passed through the [W3C Markup Validation Service](https://validator.w3.org/).
+
+
+#### CSS
+I checked my CSS code with the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/). 
+
+
+#### JavaScript
+I used [JSHint](https://jshint.com/) to check my JavaScript code.
+
+#### Python
+I used [PEP8](http://pep8online.com/checkresult) to check my Python code.
+
+### Compatibility tests
+
+#### Using different browsers
+
+I manually tested the project on the following web browsers, checking that all aspects worked as planned:
+- Google Chrome 
+- Mozilla Firefox 
+- Apple Safari
+
+This did not lead to any errors or problems.
+
+#### Using different devices
+
+The project has been tested on the following devices:
+- Apple MacBook Pro 13" 
+- Apple MacBook Pro 15" 
+- Apple iPhone 8
+- Apple iPad Air
+- Samsung Galaxy
+- Huawei p30
+
+This did not lead to any errors or problems.
+
+#### Using different screen sizes
+
+As I added each new feature to the project, I used Google Chrome's Dev Tools to view the result on different screen sizes. 
+Doing so helped me make minor adjustments to the margins, padding and font sizes of different aspects of the project. 
+
+
 
 ## Deployment
 
@@ -343,7 +364,8 @@ git commit -m ""
 ```
 git push
 6. Because I connected my Github repository to Heroku it could autp deploy the project once I pushed my code to github. 
-
+```
+```
 ## Credits
 
 ### Content

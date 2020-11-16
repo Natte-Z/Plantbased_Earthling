@@ -12,19 +12,62 @@
     </div>
     <div class="row">
         {% for recipe in recipe %}
-            <div class="col s12 m6 l4">
+            <!-- <div class="col s12 m6 l4">
             <div class="card medium">
                 <div class="card-image">
                     <img src="{{recipe.image_url}}" class="responsive-img">
                     <span class="card-title fontText">{{recipe.recipe_name}}</span>
                 </div>
                 <div class="card-action">
-                    <a href="{{ url_for('get_recipes', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
+                    <a href="{{ url_for('recipes_page', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
                         View
                     </a>
                 </div>
             </div>
-            </div>
+            </div> -->
+
+<div class="col s12 m6 l4">
+		<div class="card medium">
+			<div class="card-image ">
+				<!--  Recipe image -->
+				<img src="{{ recipe.image_url }}" class="responsive-img"/>
+				<div class="card-title">
+					<span class="fontHeader fontText">{{ recipe.recipe_name }}</span>
+				</div>
+			</div>
+			<div class="card-content">
+				<div class="col s6">
+					<a href="{{ url_for('recipes_page', recipe_id=recipe._id) }}"
+						class="waves-effect waves-light btn-small textBackground">
+						View recipe
+					</a>
+				</div>
+			<div class="fontSmall col s6 textColor">{{ recipe.recipe_description }}</div>
+			</div>
+			<div class="card-action fontSmall">
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons textColor">access_time</i>{{ recipe.recipe_time }}
+				</div>
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons textColor">dashboard</i>
+					{{ recipe.category_name }}
+				</div>
+				<div class="col s3 valign-wrapper">
+					<i class="material-icons textColor">person</i>
+					{{ recipe.created_by }}
+				</div>
+                <div class="col s3 valign-wrapper">
+					{% if recipe.vegan == "on" %}
+					<span>
+						<i class="material-icons textColor white tooltipped left"
+                    data-tooltip="Vegan">filter_vintage</i>
+					</span>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
         {% endfor %}
     </div>
 <!--create all recipes that were created by the user-->

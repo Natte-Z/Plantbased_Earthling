@@ -1,13 +1,15 @@
  {% extends "base.html" %}
  {% block content %}
 
-    <h3 class="center-align fontHeader textColor">Here you can add new recipes!</h3>
+    <h3 class="center-align fontHeader textOrange">
+        Here you can add new recipes!
+    </h3>
 
 <!--Recipe form -->
-  <div class="row recipe_form card-panel">
+  <div class="row  card-panel">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
 <!--Recipe image-->
-        <div class="input-field col s6">
+        <div class="input-field col s12">
           <i class="material-icons prefix textColor">crop_free</i>
           <input id="image_url" name="image_url" type="text" class="validate">
           <label class="textColor fontText" for="image_url">Insert a URL for the image</label>
@@ -23,33 +25,33 @@
             </select>
             <label class="textColor fontText" for="category_name">Category</label> 
         </div>
+<!--serves-->
+        <div class="col s6">
+            <label class="textColor fontText" for="recipe_serves">Serves</label>
+            <p class="range-field">
+                <i class="material-icons prefix textColor left">view_module</i>
+                <input class="col s6 validate" type="range" id="recipe_serves" name="recipe_serves" required min="0" max="30" />
+            </p>
+        </div>
 <!--Recipe_name-->
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix textColor">spa</i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                 type="text" class="validate" required>
                 <label class="textColor fontText" for="recipe_name">Recipe Name</label>
-            </div>
-<!--serves-->
-            <div class="col s6">
-                <label class="textColor fontText" for="recipe_serves">Serves</label>
-                <p class="range-field">
-                    <i class="material-icons prefix textColor left">view_module</i>
-                    <input class="col s6 validate" type="range" id="recipe_serves" name="recipe_serves" required min="0" max="30" />
-                </p>
             </div>
         </div>
 <!--time, difficulty -->
         <div class="row">
             <div class="input-field col s12">
                 <div class="input-field col s6">
-                    <i class="material-icons prefix textColor">timer</i>
+                    <i class="material-icons prefix textColor Small">timer</i>
                     <input id="recipe_time" name="recipe_time" type="text" class="validate">
-                    <label class="textColor fontText" for="recipe_time">Cooking time</label>
+                    <label class="textColor fontText" for="recipe_time">Cooking time (min)</label>
                 </div>
                 <div class="input-field col s6 textColor validate"  required>
-                    <i class="material-icons prefix textColor" id="recipe_difficulty" name="recipe_difficulty">traffic</i>
+                    <i class="material-icons prefix textColor Small" id="recipe_difficulty" name="recipe_difficulty">traffic</i>
                     <select>
                     <option class="fontText textColor" value="" disabled selected></option>
                     <option class="fontText textColor" value="1">Easy</option>
@@ -60,7 +62,6 @@
                 </div>
             </div>
         </div>
-
 <!--description-->
         <div class="row">
             <div class="input-field col s12">
@@ -75,7 +76,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix textColor">local_offer</i>
                 <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="5"
-                maxlength="200" class="validate" required>
+                maxlength="300" class="validate" required>
                 <label class="textColor fontText" for="recipe_ingredients">Ingredients (seperate each item with a ";")</label>
             </div>
         </div>
@@ -84,7 +85,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix textColor">announcement</i>
                 <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="5"
-                maxlength="200" class="validate" required>
+                maxlength="400" class="validate" required>
                 <label class="textColor fontText" for="recipe_instructions">Instructions (e.g. 1.xxx; 2.xxx; ...)</label>
             </div>
         </div>
@@ -93,7 +94,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix textColor">lightbulb_outline</i>
                 <input id="recipe_tips" name="recipe_tips" type="text" minlength="5"
-                maxlength="200" class="validate" required>
+                maxlength="200" class="validate">
                 <label class="textColor fontText" for="recipe_tips">Tips (seperate each tip with a ";")</label>
             </div>
         </div>
@@ -120,6 +121,5 @@
         </div>
     </form>
   </div>
-
 
  {% endblock %}

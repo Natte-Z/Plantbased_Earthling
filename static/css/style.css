@@ -77,25 +77,136 @@ main {
 
 /* add_recipe */
 
-.recipe_form {
-    background-color: #c9af98;
-}
 
-/* code used from: https://stackoverflow.com/questions/44942347/change-the-default-color-of-materialize-css-input-fields-i-have-attached-screen line94-107*/
-.input:focus {
-  border-bottom: 1px solid #3A4660 !important;
-  box-shadow: 0 1px 0 0 #3A4660 !important;
-}
 
-label.active {
-  color: #3A4660 !important;
-}
+/* 
 
-input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #3A4660;
-    -webkit-box-shadow: 0 1px 0 0 #3A4660;
-    box-shadow: 0 1px 0 0 #3A4660;
-}
+    change materialize.css colors 
+    https://materializecss.com/text-inputs.html
+
+*/
+
+/* label color */
+   .input-field label {
+     color: #3A4660 !important;
+   }
+
+/* type=text */
+
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #3A4660 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #3A4660 !important;
+   }
+
+/* type=range */
+
+  /* label focus color */
+   .range-field input[type=range]:focus + label {
+     color: #3A4660 !important;
+   }
+   /* label underline focus color */
+   .range-field input[type=range]:focus {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* valid color */
+   .range-field input[type=range].valid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* invalid color */
+   .range-field input[type=range].invalid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+    }
+    /* invalid color */
+    /* range slider thumb */
+   .range-field span {
+     color:white !important;
+    background:#3A4660 !important;
+    }
+
+/* range slider dot */
+    input[type=range]::-webkit-slider-thumb {
+    background-color: #3A4660;
+    }
+    input[type=range]::-moz-range-thumb {
+    background-color: #3A4660;
+    }
+    input[type=range]::-ms-thumb {
+    background-color: #3A4660;
+    }
+
+   /* range slider number */
+   .range-field span span{
+     color:white !important;
+    background:transparent !important;
+   }
+
+
+/* type=email */
+
+  /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #3A4660 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* valid color */
+   .input-field input[type=email].valid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* invalid color */
+   .input-field input[type=email].invalid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+
+/* textarea */
+
+  /* label focus color */
+   .input-field textarea:focus + label {
+     color: #3A4660 !important;
+   }
+   /* label underline focus color */
+   .input-field textarea:focus {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* valid color */
+   .input-field textarea.valid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+   /* invalid color */
+   .input-field textarea.invalid {
+     border-bottom: 1px solid #3A4660 !important;
+     box-shadow: 0 1px 0 0 #3A4660 !important;
+   }
+
 
 /* recipes_page.html */
 
@@ -215,3 +326,22 @@ footer div ul li .footerSocialIcon{
   opacity: 1;
   visibility: visible;
 }
+
+
+
+
+
+
+/* contact.html */
+
+.contactWrapper{
+    height:430px;
+}
+.contactWrapper .contactImage{
+    background: url('../images/contactimage.png');
+    background-size:cover;
+    height:406px;
+    margin-top:8px;:egami-dnuorgkcab
+.contactWrapper .contactImage img{
+    object-fit:cover;
+
