@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="re"></div>
-<h4 class="blue-grey-text darken-2 fontHeader">All Recipes</h4>
+<h4 class="textOrange fontHeader">All Recipes</h4>
 
 <!--  Recipe Card  -->
 
@@ -12,61 +12,40 @@
 		<div class="card medium">
 			<div class="card-image ">
 				<!--  Recipe image -->
-				<img src="{{ recipe.image_url }}" class="responsive-img" />
+				<img src="{{ recipe.image_url }}" class="responsive-img"/>
 				<div class="card-title">
 					<span class="fontHeader fontText">{{ recipe.recipe_name }}</span>
 				</div>
 			</div>
-
 			<div class="card-content">
 				<div class="col s6">
 					<a href="{{ url_for('recipes_page', recipe_id=recipe._id) }}"
-						class="waves-effect waves-light btn-small blue-grey-text darken-2 white">
+						class="waves-effect waves-light btn-small textBackground">
 						View recipe
 					</a>
 				</div>
-				<div class="fontSmall col s6">{{ recipe.recipe_description }}</div>
-
+			<div class="fontSmall col s6 textColor">{{ recipe.recipe_description }}</div>
 			</div>
 			<div class="card-action fontSmall">
-
 				<div class="col s3 valign-wrapper">
-					<i class="material-icons blue-grey-text darken-2">access_time</i>{{ recipe.recipe_time }}
+					<i class="material-icons textColor">access_time</i>{{ recipe.recipe_time }}
 				</div>
-
-
 				<div class="col s3 valign-wrapper">
-					<i class="material-icons blue-grey-text darken-2">dashboard</i>
+					<i class="material-icons textColor">dashboard</i>
 					{{ recipe.category_name }}
 				</div>
-
 				<div class="col s3 valign-wrapper">
-					<i class="material-icons blue-grey-text darken-2">person</i>
+					<i class="material-icons textColor">person</i>
 					{{ recipe.created_by }}
-
-
 				</div>
-
-
                 <div class="col s3 valign-wrapper">
-					
 					{% if recipe.vegan == "on" %}
 					<span>
-						<i class="material-icons blue-grey-text darken-2 white tooltipped left"
+						<i class="material-icons textColor white tooltipped left"
                     data-tooltip="Vegan">filter_vintage</i>
-
 					</span>
 					{% endif %}
-
-
 				</div>
-
-
-
-
-
-
-
 			</div>
 		</div>
 	</div>
