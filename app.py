@@ -17,10 +17,15 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    return render_template("recipes.html", recipes = list(mongo.db.recipes.find()))
+@app.route("/get_recipes", defaults={"category_id": None})
+@app.route("/get_recipes/<category_id>")
+def get_recipes(category_id):
+    if not category_id:
+        recipes = list(mongo.db.recipes.find())
+    else:
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})["category_name"]
+        recipes = list(mongo.db.recipes.find({"category_name": category}))
+    return render_template("recipes.html", recipes=recipes)
 
 
 # ---- Account (Register, login, logout) ----- #
