@@ -111,12 +111,17 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
 
 /* Contact */
 .contactTitle {
-    font-size: 45px;
-    color: #ED8A63;
+    font-size: 40px;
+    color: #c9af98;
+}
+
+.contactForm {
+    color: #3A4660;
+    font-size: 30px;
 }
 
 .contactFormTitle {
-  color: #ED8A63;
+  color: #3A4660;
   font-family: 'Heebo', sans-serif;
   font-size: 40px;
 }

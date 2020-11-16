@@ -12,7 +12,7 @@
                 <span class="card-title fontText">{{ category.category_name }}</span>
             </div>
             <div class="card-action">
-                <a href="{{ url_for('get_recipes', category_id=category._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
+                <a href="{{ url_for('recipes', category_id=category._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
                     View
                 </a>
             </div>

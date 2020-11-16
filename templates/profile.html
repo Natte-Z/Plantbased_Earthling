@@ -10,5 +10,22 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        {% for recipe in recipe %}
+            <div class="col s12 m6 l4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="{{recipe.image_url}}" class="responsive-img">
+                    <span class="card-title fontText">{{recipe.recipe_name}}</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('get_recipes', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small fontText textBackground">
+                        View
+                    </a>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
 <!--create all recipes that were created by the user-->
 {% endblock %}
