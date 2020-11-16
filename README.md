@@ -224,8 +224,8 @@ The data for this project is stored in my MongoDB database within three collecti
     * Jinja templating language was used with Flask in the HTML code. This allowed for template inheritance from the base.html file and to link the back-end to the front-end. 
 - [MongoDB](https://www.mongodb.com/)
     * This was the selected database chosen to store data in the cloud.  
-- [MaterliazeCss framework](https://materializecss.com/) 
-    * I used the MaterliazeCss container system as I wanted to design my project with a good responsiveness. I also used different functions from materliaze to make the app more interactive, e.g. forms, selectors, radius as well as icons.  
+- [MaterializeCss framework](https://materializecss.com/) 
+    * I used the MaterializeCss container system as I wanted to design my project with a good responsiveness. I also used different functions from materliaze to make the app more interactive, e.g. forms, selectors, radius as well as icons.  
 - [Gitpod](https://www.gitpod.io/)
     * I relied on Gitpod's dev environment to write the code for my project.
 - [Git Version Control](https://git-scm.com/)
