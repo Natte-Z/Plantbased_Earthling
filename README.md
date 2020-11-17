@@ -14,7 +14,7 @@ By providing tips to the recipes, people could also use exiting recipes and lett
 
 This project underlines the third of four Milestone Projects that made up the Full Stack Web Development Program at *The Code Institute*. The main requirements were to build a full-stack site with the use of HTML, CSS, JavaScript, Python + Flask and MongoDB.
 
-[Click here to view the project live.](https://xxxherokuapp.com/)
+[Click here to view the project live.](https://plantbased-earthling.herokuapp.com/)
 
 ## Table of contents
 
@@ -287,16 +287,20 @@ The following tests were conducted to test the experience of each user outlined 
 #### HTML
 My HTML code was passed through the [W3C Markup Validation Service](https://validator.w3.org/).
 
-
 #### CSS
 I checked my CSS code with the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/). 
-
+- THe CSS validator didn't find any big issues.
+- The only three issues that appeared where "This document appears to be written in English. Consider adding lang="en" (or variant) to the html start tag." and "Element head is missing a required instance of child element title.", which I can ignore for this project. 
 
 #### JavaScript
 I used [JSHint](https://jshint.com/) to check my JavaScript code.
+- The validator returned without errors. 
+- The validation for the materialize code isn't fully correct and it showed errors in my code, so I commented it out. This is a future task that I might be takling. 
 
 #### Python
 I used [PEP8](http://pep8online.com/checkresult) to check my Python code.
+- The code validatior should some errors, but they were only too long lines, e.g. "line too long (86 > 79 characters)"
+- There were also some whitespace errors, but I solved those
 
 ### Compatibility tests
 
@@ -326,15 +330,13 @@ This did not lead to any errors or problems.
 As I added each new feature to the project, I used Google Chrome's Dev Tools to view the result on different screen sizes. 
 Doing so helped me make minor adjustments to the margins, padding and font sizes of different aspects of the project. 
 
-
-
 ## Deployment
 
 This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. 
 
-The deployed project can be viewed on the following link: [Plantbased Earthling: Live Website](xx)
+The deployed project can be viewed on the following link: [Plantbased Earthling: Live Website](https://plantbased-earthling.herokuapp.com/)
 
-The project's GitHub repository can be viewed with the following link: [Plantbased Earthling: GitHub Repository](xx)
+The project's GitHub repository can be viewed with the following link: [Plantbased Earthling: GitHub Repository](https://github.com/Natte-Z/Plantbased_Earthling)
 
 ### Deploying this project to Heroku 
 To deploy the project to Heroku, I used the following steps:
