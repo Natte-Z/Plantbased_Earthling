@@ -4,40 +4,30 @@
 <!-- recipe_headline -->
 
 <div class="row">
-
     <div class="recipe_headline textOrange fontHeader">
         <h2>{{recipe.recipe_name}}</h2>
         <div class="row">
             <p>Created by: {{recipe.created_by}}</p>
         </div>
     </div>
-
-
     <!-- recipe_image_url -->
     <div class="recipe_image_wrapper">
         <img class="" src="{{recipe.image_url}}" alt="recipe_image">
     </div>
-
-
-
-    
     <!-- recipe_info -->
     <div class="recipe_description fontText textColor">
         <h5>{{recipe.recipe_description}}</h5>
     </div>
     <div class="recipe_basic card-panel">
         <div class="col-4 textColor fontText">
-            <i class="material-icons prefix textColor">timer</i>
             <h6>Cooking time(min):</h6>
             <p class="textBeige">{{recipe.recipe_time}}</p>
         </div>
         <div class="col-4 textColor fontText">
-            <i class="material-icons prefix textColor left">view_module</i>
             <h6>Serves:</h6>
             <p class="textBeige ">{{recipe.recipe_serves}}</p>
         </div>
         <div class="col-4 textColor fontText">
-            <i class="material-icons prefix textColor">traffic</i>
             <h6>Difficulty</h6>
             <p class="textBeige">{{recipe.recipe_difficulty}}</p>
         </div> 
@@ -50,8 +40,7 @@
                 <li class="recipe_ingredients_list">
                 <p>{{ingredient}}</p>
             </li>
-            {% endfor %}
-            
+            {% endfor %}   
         </ul>
     </div>
     <!-- recipe_instructions -->
@@ -78,7 +67,7 @@
     </div>
     <!-- recipe_edit_button --> <!-- recipe_delete -->
     <div class="row">
-        {% if session.user|lower == recipe.created_by|lower or session.admin%}
+        {% if (session.user|lower == recipe.created_by|lower or session.user == 'admin') %}
             <div class="col-6">
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
                 class="waves-effect waves-light btn-small textBackground fontText">
@@ -94,6 +83,5 @@
             </div>
         {% endif %}
     </div>
-
 </div>
 {% endblock %}

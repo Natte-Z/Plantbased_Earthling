@@ -14,7 +14,7 @@
 				<!--  Recipe image -->
 				<img src="{{ recipe.image_url }}" class="responsive-img"/>
 				<div class="card-title">
-					<span class="fontHeader fontText">{{ recipe.recipe_name }}</span>
+					<span class="fontHeader fontText">{{ recipe.recipe_name }}{{ session.admin }}</span>
 				</div>
 			</div>
 			<div class="card-content">
@@ -49,7 +49,9 @@
 			</div>
 		</div>
 	</div>
+     
 	{% endfor %}
 </div>
+
 
 {% endblock%}

