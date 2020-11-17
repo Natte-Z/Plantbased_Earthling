@@ -15,10 +15,12 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     return render_template("recipes.html", recipes = list(mongo.db.recipes.find()))
+
 
 @app.route("/recipes/<category_id>")
 def recipes(category_id):
@@ -27,6 +29,7 @@ def recipes(category_id):
         recipes = list(mongo.db.recipes.find({"category_name": category}))
     return render_template("recipes.html", recipes=recipes)
 
+
 # ---- Account (Register, login, logout) ----- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -34,11 +37,11 @@ def register():
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-    
+        
         if existing_user:
             flash("username already exists")
             return redirect(url_for("register"))
-        
+      
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -50,6 +53,7 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -93,6 +97,7 @@ def profile(username):
         return render_template("profile.html", recipe=recipe, username=username)
     return render_template("login.html")
 
+
 @app.route("/logout")
 def logout():
     #remove user form the session cookies
@@ -103,6 +108,7 @@ def logout():
 
 # ---- recipe_page ----- #
 
+
 @app.route("/recipes_page/<recipe_id>")
 def recipes_page(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -111,6 +117,7 @@ def recipes_page(recipe_id):
 
 # ---- Recipes (categories, add, edit) ----- #
 # ---- add_recipe ----- #
+
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
@@ -140,6 +147,7 @@ def add_recipe():
 
 # ---- edit_recipe ----- #
 
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -168,6 +176,7 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
+
 # ---- delete_recipe ----- #
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
@@ -175,11 +184,13 @@ def delete_recipe(recipe_id):
     flash("Recipe deleted!")
     return redirect(url_for("get_recipes"))
 
+
 # ---- categories ----- #
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
 
 # ---- contact ----- #
 @app.route("/contact")
@@ -190,4 +201,3 @@ def contact():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")), debug=True)
-
