@@ -77,8 +77,6 @@ main {
 
 /* add_recipe */
 
-
-
 /* 
 
     change materialize.css colors 
@@ -282,9 +280,6 @@ footer div ul li .footerSocialIcon{
     border-color: #f5c6cb;
 }
 
-
-
-
 /* 
     scroll to top button 
     https://codepen.io/deveb22/pen/QxPmGz
@@ -327,11 +322,6 @@ footer div ul li .footerSocialIcon{
   visibility: visible;
 }
 
-
-
-
-
-
 /* contact.html */
 
 .contactWrapper{
@@ -344,4 +334,3 @@ footer div ul li .footerSocialIcon{
     margin-top:8px;:egami-dnuorgkcab
 .contactWrapper .contactImage img{
     object-fit:cover;
-
